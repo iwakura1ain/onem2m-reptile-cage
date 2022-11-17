@@ -10,7 +10,7 @@ class CSEInterface:
     """
     
     def __init__(self, config):
-        self.config = config["CSE"]
+        self.config = config
         
         # self.cse_ip = self.config["cse_ip"]
         # self.cse_port = self.config["cse_port"]

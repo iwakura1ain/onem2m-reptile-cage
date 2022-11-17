@@ -8,7 +8,7 @@ def main():
     config = configparser.ConfigParser()
     config.read("config.ini")
     
-    log.startLogger(config)
+    log.startLogger(config["LOG"])
     ae.startAE(config)
 
 if __name__=="__main__":

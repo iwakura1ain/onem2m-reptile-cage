@@ -12,8 +12,8 @@ def startLogger(config):
     """
     global logger
     if logger is None:
-        logging.basicConfig(filename=config["LOG"]["log_dir"], level=config["LOG"])
-        logger = logging.getLogger("test")
+        logging.basicConfig(filename=config["log_dir"]+config["log_name"], level=config["log_level"])
+        logger = logging.getLogger(config["log_name"])
         
 def logInfo(logStr):
     """

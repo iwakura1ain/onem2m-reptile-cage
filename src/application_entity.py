@@ -20,6 +20,9 @@ def startAE(config):
         applicationEntity = ApplicationEntity(config["AE"])
         cseInterface = cse.CSEInterface(config["CSE"])
 
+        for name, sensorType in config["AE-SENSORS"]:
+            applicationEntity.addSensor(name, sensorType)
+        
         while(True):
             #main AE loop 
             pass
@@ -42,7 +45,7 @@ class ApplicationEntity:
         self.config = config       
         self.sensors = {}
     
-
+            
     def addSensor(self, name, sensorType, interface=None):
         """
         센서 추가
