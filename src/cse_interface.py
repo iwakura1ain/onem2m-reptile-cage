@@ -43,7 +43,7 @@ class CSEInterface:
 		"rn":"DATA",
 		"mni":10000
 	    }
-	    i}
+	}
         
         
     def createCIN(self):
