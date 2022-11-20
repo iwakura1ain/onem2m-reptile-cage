@@ -13,7 +13,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-#test for commit1
-#test for commit2
-#test for commit2
