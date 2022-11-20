@@ -2,27 +2,50 @@ import cse_interface as cse
 import sensor_interface as sens
 from log.log import *
 
+import os, configparser
+
+applicationEntity = None
+cseInterface = None
+
+def startAE(config):
+    """
+    AE 생성, CSEInterface 생성 -> main AE loop
+    ---
+    config : config 
+    """
+    
+    global ApplicationEntity, cseInterface
+    
+    if ApplicationEntity is None and cseInterface is None:
+        applicationEntity = ApplicationEntity(config["AE"])
+        cseInterface = cse.CSEInterface(config["CSE"])
+
+        for name, sensorType in config["AE-SENSORS"]:
+            applicationEntity.addSensor(name, sensorType)
+        
+        while(True):
+            #main AE loop 
+            pass
+    
 
 class ApplicationEntity:
     """
     IOT 장치에서 센서값을 읽고 전달하는 역할
     ---
     startLogger : 로깅 기능 시작
-    cse : cse interface
+    config : configParser 
+    cseInterface : cse interface
     sensors : { "name": Sensor, ... } 이루어진 센서들
     """
     
     def __init__(self, config):
         #TODO: offload to main
         #startLogger(self.config["log_dir"], self.config["log_level"])
-        
-        #TODO: offload to main
-        #self.config.read(config_dir)
-        
-        self.config = config
-        self.cseInterface = cse.CSEInterface(config)
-        self.sensors = {}
 
+        self.config = config       
+        self.sensors = {}
+    
+            
     def addSensor(self, name, sensorType, interface=None):
         """
         센서 추가
