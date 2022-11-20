@@ -3,7 +3,7 @@ from functools import wraps
 
 logger = None
 
-def startLogger(config):
+def startLogger(log_dir, log_level=logging.INFO):
     """
     로거 생성
     --
@@ -11,10 +11,10 @@ def startLogger(config):
     log_level: 로그 레벨 
     """
     global logger
-    if logger is None:
-        logging.basicConfig(filename=config["log_dir"]+config["log_name"], level=config["log_level"])
-        logger = logging.getLogger(config["log_name"])
-        
+    logging.basicConfig(filename="test.log", level=logging.INFO)
+    logger = logging.getLogger("test")   
+
+    
 def logInfo(logStr):
     """
     log decorator 

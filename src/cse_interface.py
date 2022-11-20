@@ -10,11 +10,9 @@ class CSEInterface:
     """
     
     def __init__(self, config):
-        self.config = config
-        
-        # self.cse_ip = self.config["cse_ip"]
-        # self.cse_port = self.config["cse_port"]
-        # self.cse_release = self.config["cse_release"]
+        self.cse_ip = self.config["cse_ip"]
+        self.cse_port = self.config["cse_port"]
+        self.cse_release = self.config["cse_release"]
 
         
     def getHeaders(self):
@@ -110,7 +108,4 @@ class CSEInterface:
 	}
     
         
-
-
-
 
