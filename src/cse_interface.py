@@ -78,7 +78,7 @@ class CSEInterface:
         rn: 수정할 ae 이름
         **kwargs: 바꾸고 싶은 값을 인자로 -> modifyAE(rn, key="val", ...) 전달
         """
-        body = kwargs
+        body = {"m2m:ae": kwargs}
         try:
             res = req.post(url=self.url, headers=self.headers, json=body)
             print(res.text)
