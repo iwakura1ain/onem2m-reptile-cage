@@ -1,115 +1,190 @@
-import requests, json
+import json, uuid
+import requests as req
+from requests.exceptions import RequestException
 
 class CSEInterface:
     """
     CSE와 interface하는 클래스
     ---
-    config : configparser instance
-    ---
-    cse_* : cse 정보
+    uuid: ae uuid 
+    
+    cse_ip: cse ip
+    cse_port: cse port
+    cse_cb: cse container base
+
+    url: cse url
+    headers: request headers
     """
     
     def __init__(self, config):
-        self.config = config
+        self.uuid = str(uuid.uuid4())
         
-        # self.cse_ip = self.config["cse_ip"]
-        # self.cse_port = self.config["cse_port"]
-        # self.cse_release = self.config["cse_release"]
+        self.cse_ip = config["cse_ip"]
+        self.cse_port = config["cse_port"]
+        self.cse_cb = config["cse_cb"]
 
-        
-    def getHeaders(self):
-        return {
-	    "X-M2M-Origin": "S"+name,
-	    "X-M2M-RI": "req"+requestNr,
-	    "Content-Type": "application/vnd.onem2m-res+json;ty=2"
-	}
-    
-        
-
-    @logInfo("creating AE")
-    def createAE(self):
-        headers = self.getHeaders()
-        body = { 
-	    "m2m:ae":{
-		"rn":name,			
-		"api":"app.company.com",
-		"rr":false
-	    }
-	}
-
-
-    def createCNT(self):
-        headers = self.getHeaders()
-        body = {
-	    "m2m:cnt":{
-		"rn":"DATA",
-		"mni":10000
-	    }
-	}
-        
-        
-    def createCIN(self):
-        headers = self.getHeaders()
-        body = {
-	    "m2m:cin":{
-	        "con": con
-	    }
-	}
-        
-        
-    def createACP(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:acp" : {
-                "rn" : "acp_ryeubi",
-                "pv" : {
-                    "acr" : [{
-                        "acco" : [],
-                        "acor" : [
-                            "justin"
-                        ],
-                        "acop" : "59"
-                    }, 
-                             {
-                                 "acor" : [
-                        "ryeubi"
-                    ],
-                "acop" : "63"
-            }]
-        },
-        "pvs" : {
-            "acr" : [{
-              "acco" : [],
-                "acor" : [
-                    "justin1"
-                    ],
-                "acop" : "59"
-            }, 
-            {
-                "acor" : [
-                    "ryeubi"
-                    ],
-                "acop" : "63"
-            }]
+        self.url = f"http://{self.cse_ip}:{self.cse_port}/{self.cse_cb}"
+        self.headers = {
+            "Accept": "application/json",
+            "X-M2M-RI": "req" + self.uuid,
+            "X-M2M-Origin": "S" + self.uuid,
+            "Content-Type": "application/vnd.onem2m-res+json;ty=2"
         }
-        }
+        
+
+    def getAE(self, rn):
+        """
+        AE 조회
+        ---
+        rn: 조회할 AE 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+        
+       
+    def createAE(self, rn, lbl=["none"], rr="true", api="cage.create.ae", poa=["127.0.0.1"]):
+        """
+        AE 생성
+        ---
+        rn: 생성할 AE 이름
+        ...
+        """
+        body = {
+            "m2m:ae": {
+                "rn": rn,
+                "api": api,
+                "rr": rr,
+                "lbl": lbl,
+                "poa": poa
+            }
         }
 
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
         
-    def createSubscription(self):
-        headers = self.getHeaders()
-        body = {
-	    "m2m:sub": {
-		"rn": "sub",
-		"nu": ["http://"+config.app.ip+":"+config.app.port+"/"+"S"+name+"?ct=json"],
-		"nct": 2,
-		"enc": {
-		    "net": [3]
-		}
-	    }
-	}
-    
+    def modifyAE(self, rn, **kwargs):
+        """
+        AE 수정
+        ---
+        rn: 수정할 ae 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyAE(rn, key="val", ...) 전달
+        """
+        body = kwargs
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
         
+        
+    def deleteAE(self, rn):
+        """
+        AE 삭제
+        ---
+        rn: 삭제할 AE 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+     
+        
+
+#     # @logInfo("creating AE")
+#     # def createAE(self):
+#     #     headers = self.getHeaders()
+#     #     body = { 
+#     #         "m2m:ae":{
+#     #     	"rn":name,			
+#     #     	"api":"app.company.com",
+#     #     	"rr":false
+#     #         }
+#     #     }
+
+
+#     # def createCNT(self):
+#     #     headers = self.getHeaders()
+#     #     body = {
+#     #         "m2m:cnt":{
+#     #     	"rn":"DATA",
+#     #     	"mni":10000
+#     #         }
+#     #     }
+        
+        
+#     # def createCIN(self):
+#     #     headers = self.getHeaders()
+#     #     body = {
+#     #         "m2m:cin":{
+#     #             "con": con
+#     #         }
+#     #     }
+        
+        
+#     # def createACP(self):
+#     #     headers = self.getHeaders()
+#     #     body = {
+#     #         "m2m:acp" : {
+#     #             "rn" : "acp_ryeubi",
+#     #             "pv" : {
+#     #                 "acr" : [{
+#     #                     "acco" : [],
+#     #                     "acor" : [
+#     #                         "justin"
+#     #                     ],
+#     #                     "acop" : "59"
+#     #                 }, 
+#     #                          {
+#     #                              "acor" : [
+#     #                     "ryeubi"
+#     #                 ],
+#     #             "acop" : "63"
+#     #         }]
+#     #     },
+#     #     "pvs" : {
+#     #         "acr" : [{
+#     #           "acco" : [],
+#     #             "acor" : [
+#     #                 "justin1"
+#     #                 ],
+#     #             "acop" : "59"
+#     #         }, 
+#     #         {
+#     #             "acor" : [
+#     #                 "ryeubi"
+#     #                 ],
+#     #             "acop" : "63"
+#     #         }]
+#     #     }
+#     #     }
+#     #     }
+
+        
+#     # def createSubscription(self):
+#     #     headers = self.getHeaders()
+#     #     body = {
+#     #         "m2m:sub": {
+#     #     	"rn": "sub",
+#     #     	"nu": ["http://"+config.app.ip+":"+config.app.port+"/"+"S"+name+"?ct=json"],
+#     #     	"nct": 2,
+#     #     	"enc": {
+#     #     	    "net": [3]
+#     #     	}
+#     #         }
+#     #     }
+
 
 
 
