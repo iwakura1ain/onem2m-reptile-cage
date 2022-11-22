@@ -2,9 +2,6 @@ import json, uuid
 import requests as req
 from requests.exceptions import RequestException
 
-# 주석
-# ssdsdsffsesd
-
 class CSEInterface:
     """
     CSE와 interface하는 클래스
