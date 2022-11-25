@@ -102,88 +102,90 @@ class CSEInterface:
      
         
 
-#     # @logInfo("creating AE")
-#     # def createAE(self):
-#     #     headers = self.getHeaders()
-#     #     body = { 
-#     #         "m2m:ae":{
-#     #     	"rn":name,			
-#     #     	"api":"app.company.com",
-#     #     	"rr":false
-#     #         }
-#     #     }
+    @logInfo("creating AE")
+    def createAE(self):
+        headers = self.getHeaders()
+        body = { 
+            "m2m:ae":{
+                "rn":"justin",			
+                "api":"0.2.481.2.0001.001.000111",
+                "rr":True,
+                "poa":["http://203.254.173.104:9727"]
+            }
+        }
 
 
-#     # def createCNT(self):
-#     #     headers = self.getHeaders()
-#     #     body = {
-#     #         "m2m:cnt":{
-#     #     	"rn":"DATA",
-#     #     	"mni":10000
-#     #         }
-#     #     }
-        
-        
-#     # def createCIN(self):
-#     #     headers = self.getHeaders()
-#     #     body = {
-#     #         "m2m:cin":{
-#     #             "con": con
-#     #         }
-#     #     }
-        
-        
-#     # def createACP(self):
-#     #     headers = self.getHeaders()
-#     #     body = {
-#     #         "m2m:acp" : {
-#     #             "rn" : "acp_ryeubi",
-#     #             "pv" : {
-#     #                 "acr" : [{
-#     #                     "acco" : [],
-#     #                     "acor" : [
-#     #                         "justin"
-#     #                     ],
-#     #                     "acop" : "59"
-#     #                 }, 
-#     #                          {
-#     #                              "acor" : [
-#     #                     "ryeubi"
-#     #                 ],
-#     #             "acop" : "63"
-#     #         }]
-#     #     },
-#     #     "pvs" : {
-#     #         "acr" : [{
-#     #           "acco" : [],
-#     #             "acor" : [
-#     #                 "justin1"
-#     #                 ],
-#     #             "acop" : "59"
-#     #         }, 
-#     #         {
-#     #             "acor" : [
-#     #                 "ryeubi"
-#     #                 ],
-#     #             "acop" : "63"
-#     #         }]
-#     #     }
-#     #     }
-#     #     }
+    def createCNT(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:cnt":{
+                "rn":"ss",
+                "lbl":["ss"],
+                "mbs":16384
+            }
+        }
+            
+            
+    def createCIN(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:cin":{
+                "con": "123"
+            }
+        }
+            
+            
+    def createACP(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:acp" : {
+                "rn" : "acp_ryeubi",
+                "pv" : {
+                    "acr" : [{
+                        "acco" : [],
+                        "acor" : [
+                            "justin"
+                            ],
+                        "acop" : "59"
+                    }, 
+                    {
+                        "acor" : [
+                            "ryeubi"
+                            ],
+                        "acop" : "63"
+                    }]
+                },
+                "pvs" : {
+                    "acr" : [{
+                        "acco" : [],
+                        "acor" : [
+                            "justin1"
+                            ],
+                        "acop" : "59"
+                    }, 
+                    {
+                        "acor" : [
+                            "ryeubi"
+                            ],
+                        "acop" : "63"
+                    }]
+                }
+            }
+        }
 
         
-#     # def createSubscription(self):
-#     #     headers = self.getHeaders()
-#     #     body = {
-#     #         "m2m:sub": {
-#     #     	"rn": "sub",
-#     #     	"nu": ["http://"+config.app.ip+":"+config.app.port+"/"+"S"+name+"?ct=json"],
-#     #     	"nct": 2,
-#     #     	"enc": {
-#     #     	    "net": [3]
-#     #     	}
-#     #         }
-#     #     }
+    def createSubscription(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:sub": {
+        	"rn": "sub1",
+            "enc": {
+        	    "net": [3]
+        	},
+        	"nu": ["//keti.re.kr/Mobius/Mobius/justin"],
+        	"exc": 10,
+            }
+        }
 
 
 
