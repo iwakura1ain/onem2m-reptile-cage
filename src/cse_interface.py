@@ -1,4 +1,6 @@
-import requests, json
+import requests as req 
+import json
+import uuid
 
 class CSEInterface:
     """
@@ -98,43 +100,122 @@ class CSEInterface:
         except RequestException:
             pass
      
-        
-
     @logInfo("creating AE")
-    def createAE(self):
-        headers = self.getHeaders()
-        body = { 
-            "m2m:ae":{
-                "rn":"justin",			
-                "api":"0.2.481.2.0001.001.000111",
-                "rr":True,
-                "poa":["http://203.254.173.104:9727"]
-            }
-        }
 
-
-    def createCNT(self):
-        headers = self.getHeaders()
+    def createCNT(self, rn, lbl=["none"], mbs = 16384):
         body = {
             "m2m:cnt":{
-                "rn":"ss",
-                "lbl":["ss"],
-                "mbs":16384
+                "rn":rn,
+                "lbl":lbl,
+                "mbs":mbs
             }
         }
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def getCNT(self, rn):
+        """
+        CNT 조회
+        ---
+        rn: 조회할 CNT 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def modifyCNT(self, rn, **kwargs):
+        """
+        CNT 수정
+        ---
+        rn: 수정할 CNT 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyCNT(rn, key="val", ...) 전달
+        """
+        body = {"m2m:cnt":kwargs}
+
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteCNT(self, rn):
+        """
+        CNT 삭제
+        ---
+        rn: 삭제할 CNT 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
             
             
-    def createCIN(self):
-        headers = self.getHeaders()
+    def createCIN(self, con):
         body = {
             "m2m:cin":{
-                "con": "123"
+                "con": con
             }
         }
+
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
             
+        except RequestException:
+            pass
+
+    def getCIN(self, rn):
+        """
+        CIN 조회
+        ---
+        rn: 조회할 CIN 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
             
+        except RequestException:
+            pass
+
+    def modifyCIN(self, rn, **kwargs):
+        """
+        CIN 수정
+        ---
+        rn: 수정할 cin 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyCIN(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteCIN(self, rn):
+        """
+        CIN 삭제
+        ---
+        rn: 삭제할 CIN 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
     def createACP(self):
-        headers = self.getHeaders()
         body = {
             "m2m:acp" : {
                 "rn" : "acp_ryeubi",
@@ -171,139 +252,110 @@ class CSEInterface:
             }
         }
 
-    def createSubscription(self):
-        headers = self.getHeaders()
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def getACP(self, rn):
+        """
+        ACP 조회
+        ---
+        rn: 조회할 ACP 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def modifyACP(self, rn, **kwargs):
+        """
+        ACP 수정
+        ---
+        rn: 수정할 acp 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyACP(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteACP(self, rn):
+        """
+        ACP 삭제
+        ---
+        rn: 삭제할 ACP 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def createSubscription(self, rn, net, nu, exc):
         body = {
             "m2m:sub": {
-        	"rn": "sub1",
+        	"rn": rn,
             "enc": {
-        	    "net": [3]
+        	    "net": net
         	},
-        	"nu": ["//keti.re.kr/Mobius/Mobius/justin"],
-        	"exc": 10,
+        	"nu": nu,
+        	"exc": exc,
             }
         }
 
-    def referCNT(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:cnt": {
-                "pi": "SOrigin",
-                "ri": "3-20221014093232591069",
-                "ty": 3,
-                "ct": "20221014T093232",
-                "st": 1,
-                "rn": "ss",
-                "lt": "20221014T093232",
-                "et": "20241014T093232",
-                "lbl": [
-                    "ss"
-                ],
-                "cr": "S4eOmZ95xjy",
-                "mni": 3153600000,
-                "mbs": 16384,
-                "mia": 31536000,
-                "cni": 1,
-                "cbs": 3
-            }
-        }
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
-    def changeCNT(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:cnt": {
-                "lbl": ["key1", "key2"],
-                "mbs": 16384
-            }
-        }
+    def getSubscription(self, rn):
+        """
+        Subscription 조회
+        ---
+        rn: 조회할 Subscription 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
-    def referCIN(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:cin": {
-                "pi": "3-20221014093232591069",
-                "ri": "4-20221128161435378055",
-                "ty": 4,
-                "ct": "20221128T161435",
-                "st": 2,
-                "rn": "4-20221128161435377",
-                "lt": "20221128T161435",
-                "et": "20241128T161435",
-                "cs": 3,
-                "cr": "SYmRAeJJt9H",
-                "con": "123"
-            }
-        }
+    def modifySubscription(self, rn, **kwargs):
+        """
+        Subscription 수정
+        ---
+        rn: 수정할 Subscription 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifySubscription(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
-    def referACP(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:acp": {
-                "pi": "5-20220919025506751207",
-                "ri": "1-20221128161757765361",
-                "ty": 1,
-                "ct": "20221128T161757",
-                "rn": "acp_ryeubi",
-                "lt": "20221128T161757",
-                "et": "20241128T161757",
-                "pv": {
-                    "acr": [
-                        {
-                            "acco": [],
-                            "acor": [
-                                "justin"
-                            ],
-                            "acop": "59"
-                        },
-                        {
-                            "acor": [
-                                "ryeubi"
-                            ],
-                            "acop": "63"
-                        }
-                    ]
-                },
-                "pvs": {
-                    "acr": [
-                        {
-                            "acco": [],
-                            "acor": [
-                                "justin1"
-                            ],
-                            "acop": "59"
-                        },
-                        {
-                            "acor": [
-                                "ryeubi"
-                            ],
-                            "acop": "63"
-                        }
-                    ]
-                }
-            }
-        }
-
-    def changeACP(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:acp": {
-                "pvs": {
-                    "acr": [
-                        {
-                            "acor": ["Origin", "ryeubi"],
-                            "acop": 63
-                    }
-                ]
-                },
-                "lbl": ["acp_ryeubi", "key1"]
-            }
-        }
-
-    def changeSubscription(self):
-        headers = self.getHeaders()
-        body = {
-            "m2m:sub": {
-                "lbl": ["VALUE_1"]
-            }
-        }
-
+    def deleteSubscription(self, rn):
+        """
+        Subscription 삭제
+        ---
+        rn: 삭제할 Subscription 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
