@@ -1,6 +1,4 @@
-import json, uuid
-import requests as req
-from requests.exceptions import RequestException
+import requests, json
 
 class CSEInterface:
     """
@@ -173,7 +171,6 @@ class CSEInterface:
             }
         }
 
-        
     def createSubscription(self):
         headers = self.getHeaders()
         body = {
@@ -187,7 +184,78 @@ class CSEInterface:
             }
         }
 
+    def referCNT(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:cnt": {
+                "pi": "SOrigin",
+                "ri": "3-20221014093232591069",
+                "ty": 3,
+                "ct": "20221014T093232",
+                "st": 1,
+                "rn": "ss",
+                "lt": "20221014T093232",
+                "et": "20241014T093232",
+                "lbl": [
+                    "ss"
+                ],
+                "cr": "S4eOmZ95xjy",
+                "mni": 3153600000,
+                "mbs": 16384,
+                "mia": 31536000,
+                "cni": 1,
+                "cbs": 3
+            }
+        }
 
+    def changeCNT(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:cnt": {
+                "lbl": ["key1", "key2"],
+                "mbs": 16384
+            }
+        }
 
+    def referCIN(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:cin": {
+                "pi": "3-20221014093232591069",
+                "ri": "4-20221128161435378055",
+                "ty": 4,
+                "ct": "20221128T161435",
+                "st": 2,
+                "rn": "4-20221128161435377",
+                "lt": "20221128T161435",
+                "et": "20241128T161435",
+                "cs": 3,
+                "cr": "SYmRAeJJt9H",
+                "con": "123"
+            }
+        }
 
+    def changeACP(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:acp": {
+                "pvs": {
+                    "acr": [
+                        {
+                            "acor": ["Origin", "ryeubi"],
+                            "acop": 63
+                    }
+                ]
+                },
+                "lbl": ["acp_ryeubi", "key1"]
+            }
+        }
+
+    def changeSubscription(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:sub": {
+                "lbl": ["VALUE_1"]
+            }
+        }
 
