@@ -160,7 +160,7 @@ class CSEInterface:
             pass
             
             
-    def createCIN(self, con):
+    def createCIN(self, con, url):
         body = {
             "m2m:cin":{
                 "con": con
@@ -174,7 +174,7 @@ class CSEInterface:
         except RequestException:
             pass
 
-    def getCIN(self, rn):
+    def getCIN(self, rn, url):
         """
         CIN 조회
         ---
@@ -187,7 +187,7 @@ class CSEInterface:
         except RequestException:
             pass
 
-    def modifyCIN(self, rn, **kwargs):
+    def modifyCIN(self, rn, url, **kwargs):
         """
         CIN 수정
         ---
@@ -202,7 +202,7 @@ class CSEInterface:
         except RequestException:
             pass
 
-    def deleteCIN(self, rn):
+    def deleteCIN(self, rn, url):
         """
         CIN 삭제
         ---
@@ -215,38 +215,30 @@ class CSEInterface:
         except RequestException:
             pass
 
-    def createACP(self):
+    def createACP(self, rn, acor1, acor2, acop1, acop2):
         body = {
             "m2m:acp" : {
-                "rn" : "acp_ryeubi",
+                "rn" : rn,
                 "pv" : {
                     "acr" : [{
                         "acco" : [],
-                        "acor" : [
-                            "justin"
-                            ],
-                        "acop" : "59"
+                        "acor" : acor1,
+                        "acop" : acop1
                     }, 
                     {
-                        "acor" : [
-                            "ryeubi"
-                            ],
-                        "acop" : "63"
+                        "acor" : acor2,
+                        "acop" : acop2
                     }]
                 },
                 "pvs" : {
                     "acr" : [{
                         "acco" : [],
-                        "acor" : [
-                            "justin1"
-                            ],
-                        "acop" : "59"
+                        "acor" : acor1,
+                        "acop" : acop1
                     }, 
                     {
-                        "acor" : [
-                            "ryeubi"
-                            ],
-                        "acop" : "63"
+                        "acor" : acor2,
+                        "acop" : acop2
                     }]
                 }
             }
