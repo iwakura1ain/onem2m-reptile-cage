@@ -235,6 +235,54 @@ class CSEInterface:
             }
         }
 
+    def referACP(self):
+        headers = self.getHeaders()
+        body = {
+            "m2m:acp": {
+                "pi": "5-20220919025506751207",
+                "ri": "1-20221128161757765361",
+                "ty": 1,
+                "ct": "20221128T161757",
+                "rn": "acp_ryeubi",
+                "lt": "20221128T161757",
+                "et": "20241128T161757",
+                "pv": {
+                    "acr": [
+                        {
+                            "acco": [],
+                            "acor": [
+                                "justin"
+                            ],
+                            "acop": "59"
+                        },
+                        {
+                            "acor": [
+                                "ryeubi"
+                            ],
+                            "acop": "63"
+                        }
+                    ]
+                },
+                "pvs": {
+                    "acr": [
+                        {
+                            "acco": [],
+                            "acor": [
+                                "justin1"
+                            ],
+                            "acop": "59"
+                        },
+                        {
+                            "acor": [
+                                "ryeubi"
+                            ],
+                            "acop": "63"
+                        }
+                    ]
+                }
+            }
+        }
+
     def changeACP(self):
         headers = self.getHeaders()
         body = {
