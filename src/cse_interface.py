@@ -1,116 +1,353 @@
-import requests, json
+import requests as req 
+import json
+import uuid
 
 class CSEInterface:
     """
     CSE와 interface하는 클래스
     ---
-    config : configparser instance
-    ---
-    cse_* : cse 정보
+    uuid: ae uuid 
+    
+    cse_ip: cse ip
+    cse_port: cse port
+    cse_cb: cse container base
+
+    url: cse url
+    headers: request headers
     """
     
     def __init__(self, config):
-        self.config = config
+        self.uuid = str(uuid.uuid4())
         
-        # self.cse_ip = self.config["cse_ip"]
-        # self.cse_port = self.config["cse_port"]
-        # self.cse_release = self.config["cse_release"]
+        self.cse_ip = config["cse_ip"]
+        self.cse_port = config["cse_port"]
+        self.cse_cb = config["cse_cb"]
+
+        self.url = f"http://{self.cse_ip}:{self.cse_port}/{self.cse_cb}"
+        self.headers = {
+            "Accept": "application/json",
+            "X-M2M-RI": "req" + self.uuid,
+            "X-M2M-Origin": "S" + self.uuid,
+            "Content-Type": "application/vnd.onem2m-res+json;ty=2"
+        }
+        
+
+    def getAE(self, rn):
+        """
+        AE 조회
+        ---
+        rn: 조회할 AE 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+        
+       
+    def createAE(self, rn, lbl=["none"], rr="true", api="cage.create.ae", poa=["127.0.0.1"]):
+        """
+        AE 생성
+        ---
+        rn: 생성할 AE 이름
+        ...
+        """
+        body = {
+            "m2m:ae": {
+                "rn": rn,
+                "api": api,
+                "rr": rr,
+                "lbl": lbl,
+                "poa": poa
+            }
+        }
+
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
         
-    def getHeaders(self):
-        return {
-	    "X-M2M-Origin": "S"+name,
-	    "X-M2M-RI": "req"+requestNr,
-	    "Content-Type": "application/vnd.onem2m-res+json;ty=2"
-	}
-    
+    def modifyAE(self, rn, **kwargs):
+        """
+        AE 수정
+        ---
+        rn: 수정할 ae 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyAE(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
         
-
+        
+    def deleteAE(self, rn):
+        """
+        AE 삭제
+        ---
+        rn: 삭제할 AE 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+     
     @logInfo("creating AE")
-    def createAE(self):
-        headers = self.getHeaders()
-        body = { 
-	    "m2m:ae":{
-		"rn":name,			
-		"api":"app.company.com",
-		"rr":false
-	    }
-	}
 
+    def createCNT(self, rn, lbl=["none"], mbs = 16384):
+        body = {
+            "m2m:cnt":{
+                "rn":rn,
+                "lbl":lbl,
+                "mbs":mbs
+            }
+        }
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
-    def createCNT(self):
-        headers = self.getHeaders()
+    def getCNT(self, rn):
+        """
+        CNT 조회
+        ---
+        rn: 조회할 CNT 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def modifyCNT(self, rn, **kwargs):
+        """
+        CNT 수정
+        ---
+        rn: 수정할 CNT 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyCNT(rn, key="val", ...) 전달
+        """
+        body = {"m2m:cnt":kwargs}
+
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteCNT(self, rn):
+        """
+        CNT 삭제
+        ---
+        rn: 삭제할 CNT 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+            
+            
+    def createCIN(self, con, url):
         body = {
-	    "m2m:cnt":{
-		"rn":"DATA",
-		"mni":10000
-	    }
-	}
-        
-        
-    def createCIN(self):
-        headers = self.getHeaders()
-        body = {
-	    "m2m:cin":{
-	        "con": con
-	    }
-	}
-        
-        
-    def createACP(self):
-        headers = self.getHeaders()
+            "m2m:cin":{
+                "con": con
+            }
+        }
+
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def getCIN(self, rn, url):
+        """
+        CIN 조회
+        ---
+        rn: 조회할 CIN 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def modifyCIN(self, rn, url, **kwargs):
+        """
+        CIN 수정
+        ---
+        rn: 수정할 cin 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyCIN(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteCIN(self, rn, url):
+        """
+        CIN 삭제
+        ---
+        rn: 삭제할 CIN 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def createACP(self, rn, acor1, acor2, acop1, acop2):
         body = {
             "m2m:acp" : {
-                "rn" : "acp_ryeubi",
+                "rn" : rn,
                 "pv" : {
                     "acr" : [{
                         "acco" : [],
-                        "acor" : [
-                            "justin"
-                        ],
-                        "acop" : "59"
+                        "acor" : acor1,
+                        "acop" : acop1
                     }, 
-                             {
-                                 "acor" : [
-                        "ryeubi"
-                    ],
-                "acop" : "63"
-            }]
-        },
-        "pvs" : {
-            "acr" : [{
-              "acco" : [],
-                "acor" : [
-                    "justin1"
-                    ],
-                "acop" : "59"
-            }, 
-            {
-                "acor" : [
-                    "ryeubi"
-                    ],
-                "acop" : "63"
-            }]
-        }
-        }
+                    {
+                        "acor" : acor2,
+                        "acop" : acop2
+                    }]
+                },
+                "pvs" : {
+                    "acr" : [{
+                        "acco" : [],
+                        "acor" : acor1,
+                        "acop" : acop1
+                    }, 
+                    {
+                        "acor" : acor2,
+                        "acop" : acop2
+                    }]
+                }
+            }
         }
 
-        
-    def createSubscription(self):
-        headers = self.getHeaders()
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def getACP(self, rn):
+        """
+        ACP 조회
+        ---
+        rn: 조회할 ACP 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def modifyACP(self, rn, **kwargs):
+        """
+        ACP 수정
+        ---
+        rn: 수정할 acp 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifyACP(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def deleteACP(self, rn):
+        """
+        ACP 삭제
+        ---
+        rn: 삭제할 ACP 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
+
+    def createSubscription(self, rn, net, nu, exc):
         body = {
-	    "m2m:sub": {
-		"rn": "sub",
-		"nu": ["http://"+config.app.ip+":"+config.app.port+"/"+"S"+name+"?ct=json"],
-		"nct": 2,
-		"enc": {
-		    "net": [3]
-		}
-	    }
-	}
-    
-        
+            "m2m:sub": {
+        	"rn": rn,
+            "enc": {
+        	    "net": net
+        	},
+        	"nu": nu,
+        	"exc": exc,
+            }
+        }
 
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
+    def getSubscription(self, rn):
+        """
+        Subscription 조회
+        ---
+        rn: 조회할 Subscription 이름 
+        """
+        try:
+            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
+    def modifySubscription(self, rn, **kwargs):
+        """
+        Subscription 수정
+        ---
+        rn: 수정할 Subscription 이름
+        **kwargs: 바꾸고 싶은 값을 인자로 -> modifySubscription(rn, key="val", ...) 전달
+        """
+        body = {"m2m:ae": kwargs}
+        try:
+            res = req.post(url=self.url, headers=self.headers, json=body)
+            print(res.text)
+            
+        except RequestException:
+            pass
 
+    def deleteSubscription(self, rn):
+        """
+        Subscription 삭제
+        ---
+        rn: 삭제할 Subscription 이름 
+        """
+        try:
+            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            print(res.text)
+            
+        except RequestException:
+            pass
