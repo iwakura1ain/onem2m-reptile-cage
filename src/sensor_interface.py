@@ -12,18 +12,6 @@ class SensorInterface:
     - readSensor를 사용해 센서 읽음     
     ---    
     """
-    @staticmethod
-    def TempSensor():
-       return adafruit_dht.DHT11(board.D18).temperature
-
-    @staticmethod
-    def HumiditySensor():
-       return adafruit_dht.DHT11(board.D18).humidity
-    
-    @staticmethod
-    def CameraSensor():
-        return picamera.PiCamera.capture('Cage.jpeg')
-
     read_functions = {}
     
     @classmethod
@@ -46,6 +34,19 @@ class SensorInterface:
     @staticmethod
     def randomStr(**kwargs):
         return ascii_letters[randint(0, 10):randint(10, 20)]      
+    
+     @staticmethod
+    def TempSensor():
+       return adafruit_dht.DHT11(board.D18).temperature
+
+    @staticmethod
+    def HumiditySensor():
+       return adafruit_dht.DHT11(board.D18).humidity
+    
+    @staticmethod
+    def CameraSensor():
+        return picamera.PiCamera.capture('Cage.jpeg')
+
 
 class Sensor(SensorInterface):
     """
