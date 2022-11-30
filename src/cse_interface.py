@@ -33,21 +33,21 @@ class CSEInterface:
         }
                 
 
-    def getAE(self, rn):
+    def getAE(self, rn, path="/"):
         """
         AE 조회
         ---
         rn: 조회할 AE 이름 
         """
         try:
-            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}{path}{rn}", headers=self.headers)
             return res.json()
             
         except RequestException:
             return None
         
        
-    def createAE(self, rn, lbl=["none"], rr="true", api="cage.create.ae", poa=["127.0.0.1"]):
+    def createAE(self, rn, path="", lbl=["none"], rr="true", api="cage.create.ae", poa=["127.0.0.1"]):
         """
         AE 생성
         ---
@@ -65,7 +65,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:
@@ -102,29 +102,30 @@ class CSEInterface:
             pass
      
 
-    def createCNT(self, path, rn, lbl=["none"], mbs=16384):
+    def createCNT(self, rn, path="", lbl=["none"], mbs=16384):
         body = {
-            "m2m:cnt":{
-                "rn":rn,
-                "lbl":lbl,
-                "mbs":mbs
+            "m2m:cnt": {
+                "rn": rn,
+                "lbl": lbl,
+                "mbs": mbs
             }
         }
         try:
-            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:
             return None
 
-    def getCNT(self, path):
+
+    def getCNT(self, rn, path="/"):
         """
         CNT 조회
         ---
         rn: 조회할 CNT 이름 
         """
         try:
-            res = req.get(url=f"{self.baseurl}/{path}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}{path}{rn}", headers=self.headers)
             return res.json()
             
         except RequestException:
@@ -161,7 +162,7 @@ class CSEInterface:
             pass
             
             
-    def createCIN(self, path, con):
+    def createCIN(self, con, path=""):
         body = {
             "m2m:cin":{
                 "con": con
@@ -169,20 +170,20 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:
             return None
 
-    def getCIN(self, rn, url):
+    def getCIN(self, rn, path="/"):
         """
         CIN 조회
         ---
         rn: 조회할 CIN 이름 
         """
         try:
-            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}{path}{rn}", headers=self.headers)
             return res.json()
             
         except RequestException:
@@ -217,7 +218,7 @@ class CSEInterface:
             pass
 
 
-    def createGRP(self, path, rn, mid=[]):
+    def createGRP(self, rn, mid=[]):
         body = {
 	    "m2m:grp": {
 		"rn": rn,
@@ -227,20 +228,28 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:
             return None
 
-    def modifyGRP(self, path, mid=[]):
+    def getGRP(self, rn):
+        try:
+            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
+            return res.json()
+            
+        except RequestException:
+            return None
+
+    def modifyGRP(self, rn, path="/", mid=[]):
         body = {
             "m2m:grp": {
                 "mid": mid
             }
         }
         try:
-            res = req.put(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            res = req.put(url=f"{self.baseurl}{path}{rn}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:

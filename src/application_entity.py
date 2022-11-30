@@ -2,28 +2,37 @@ import cse_interface as cse
 import sensor_interface as sens
 from log.log import *
 
-import os, configparser
 
-
-def startAE(config):
+def startAE(config): #TODO: error messages 
     """
     AE 생성, CSEInterface 생성 -> main AE loop
     ---
     config : config 
     """
+
+    #config file parsing, creating ae classes
+    try:
+        uuid = config["AE"]["uuid"]
+        applicationEntity = ApplicationEntity(uuid, config["AE"])
+        cseInterface = cse.CSEInterface(uuid, config["CSE"])
+
+        #add sensors to ae
+        for name, sensorType in config["AE-SENSORS"]:
+            applicationEntity.registerSensors(name, sensorType)
+        
+    except KeyError:
+        #config file error 
+        quit()
     
-    uuid = config["UUID"]["uuid"]
-    applicationEntity = ApplicationEntity(uuid, config["AE"])
-    cseInterface = cse.CSEInterface(uuid, config["CSE"])
+    #check if data structures exist on server -> if not create them 
+    try:
+        _ = applicationEntity.checkAE(cseInterface)
+        _ = applicationEntity.checkGroup(cseInterface)
 
-    #add sensors to ae
-    for name, sensorType in config["AE-SENSORS"]:
-        applicationEntity.registerSensors(name, sensorType)
-
-    #if container does not exist -> create containers 
-    if applicationEntity.getContainers(cseInterface) is None:
-        applicationEntity.createContainers(cseInterface)
-
+    except ConnectionError:
+        #no connection 
+        quit()
+      
     #main loop
     while(True):
         sensorValues = applicationEntity.getSensorValues()
@@ -41,17 +50,12 @@ class ApplicationEntity:
     """
     
     def __init__(self, uuid, config):
-        self.uuid = uuid
+        self.aeName = uuid
         self.groupName = config["group_name"]
-        self.aeName = config["ae_name"]
-        self.cntName = self.uuid
-
-        self.groupPath = f"{self.aeName}/{self.groupName}"
-        self.cntPath = f"{self.aeName}/{self.groupName}/{self.cntName}"
         
         self.sensors = {}
     
-            
+        
     def registerSensors(self, name, sensorType, interface=None):
         """
         센서 추가
@@ -81,30 +85,55 @@ class ApplicationEntity:
         센서값 cse로 보내는 함수 
         """
         for name, val in sensorValues.iteritems():
-            cseInterface.createCIN(path=f"{self.cntPath}/{name}", con=val)
-    
-    def getContainers(self, cseInterface):
-        """
-        센서들 위한 컨테이너 존재하는지 확인 
-        """        
-        res = cseInterface.getCNT(self.cntPath)
-        try:
-            return res.json()["m2m:cnt"]
+            cseInterface.createCIN(path=f"{self.aeName}/{name}", con=val)
 
-        except KeyError: #no container in server
-            return None
 
-        except: #no connection 
-            return None #TODO: error recovery when no connection 
+    def checkAE(self, cseInterface):
+        """
+        cse에 ae와 cnt 존재 확인 
+        """
 
-        
-    def createContainers(self, cseInterface): #TODO: error recovery here
+        while True:
+            try:
+                res = cseInterface.getAE(rn=self.aeName) 
+                return res["m2m:ae"]
+
+            except KeyError: #no data
+                cseInterface.createAE(rn=self.aeName) #create ae 
+                for name, sensor in self.sensors.iteritems(): #create sensor containers
+                    cseInterface.createCNT(rn=name, path=f"/{self.aeName}")
+                    
+            except: #no connection 
+                raise ConnectionError #TODO: error recovery when no connection
+
+    def checkGroup(self, cseInterface):
         """
-        센서들 위한 컨테이너 생성 
+        group 내에 존재하는지 확인 존재 확인 
         """
-        cseInterface.createCNT(path=self.groupPath, rn=self.cntName) #create base cnt        
-        for name, s in self.sensors: # create individual sensor cnt 
-            cseInterface.createCNT(path=self.cntPath, rn=name)
+        while True:
+            try:
+                # group 조회 
+                res = cseInterface.getGRP(rn=self.groupName)
+                res = res["m2m:grp"]["mid"]
+
+                # group에 ae 추가하기 
+                aePath = f"Mobius/{self.aeName}"  #TODO: static baseurl
+                if aePath not in res: 
+                    mid = res.append(aePath)
+                    res = cseInterface.modifyGRP(rn=self.groupName, mid=mid)
+                    res = ["m2m:grp"]["mid"]
+                
+                return res
+
+            # no group
+            except KeyError:
+                cseInterface.createGRP(rn=self.groupName) #create group 
+
+            # no connection
+            except:
+                raise ConnectionError #TODO: error recovery when no connection
+
+
 
             
     

@@ -9,9 +9,9 @@ def main():
     config = configparser.ConfigParser()
     config.read("config.ini")
 
-    if config["UUID"]["uuid"] == "":
+    if config["AE"]["uuid"] == "":
         with open("config.ini", "w") as configfile:
-            config["UUID"]["uuid"] = str(uuid.uuid4())
+            config["AE"]["uuid"] = str(uuid.uuid4())
             config.write(configfile)
             
     log.startLogger(config)
