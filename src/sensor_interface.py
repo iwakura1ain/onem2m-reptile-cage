@@ -1,5 +1,7 @@
 from random import randint
 from string import ascii_letters
+import time, board, adafruit_dht,picamera
+
 
 class SensorInterface:
     """
@@ -17,6 +19,10 @@ class SensorInterface:
     @staticmethod
     def HumiditySensor():
        return adafruit_dht.DHT11(board.D18).humidity
+    
+    @staticmethod
+    def CameraSensor():
+        return picamera.PiCamera.capture('Cage.jpeg')
 
     read_functions = {}
     
