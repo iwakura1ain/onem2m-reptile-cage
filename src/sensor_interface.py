@@ -10,6 +10,14 @@ class SensorInterface:
     - readSensor를 사용해 센서 읽음     
     ---    
     """
+    @staticmethod
+    def TempSensor():
+       return adafruit_dht.DHT11(board.D18).temperature
+
+    @staticmethod
+    def HumiditySensor():
+       return adafruit_dht.DHT11(board.D18).humidity
+
     read_functions = {}
     
     @classmethod
