@@ -33,3 +33,27 @@ def logInfo(logStr):
     return decorator
 
 
+def logCall(logStr):
+    """
+    log decorator 
+    ---
+    @logCall("메세지")
+    """
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            logger.info(logStr)
+
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+
+def logInfo(logStr):
+    logger.info(logStr)
+
+    
+def logError(logStr):
+    logger.error(logStr)
+
+
