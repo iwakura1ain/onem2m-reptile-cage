@@ -1,4 +1,5 @@
-import requests as req 
+import requests as req
+from requests.exeptions import RequestException 
 import json
 import uuid
 
@@ -16,21 +17,21 @@ class CSEInterface:
     headers: request headers
     """
     
-    def __init__(self, config):
-        self.uuid = str(uuid.uuid4())
+    def __init__(self, uuid, config):
+        self.uuid = uuid
         
         self.cse_ip = config["cse_ip"]
         self.cse_port = config["cse_port"]
         self.cse_cb = config["cse_cb"]
 
-        self.url = f"http://{self.cse_ip}:{self.cse_port}/{self.cse_cb}"
+        self.baseurl = f"http://{self.cse_ip}:{self.cse_port}/{self.cse_cb}"
         self.headers = {
             "Accept": "application/json",
             "X-M2M-RI": "req" + self.uuid,
             "X-M2M-Origin": "S" + self.uuid,
             "Content-Type": "application/vnd.onem2m-res+json;ty=2"
         }
-        
+                
 
     def getAE(self, rn):
         """
@@ -40,10 +41,10 @@ class CSEInterface:
         """
         try:
             res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
-            print(res.text)
+            return res.json()
             
         except RequestException:
-            pass
+            return None
         
        
     def createAE(self, rn, lbl=["none"], rr="true", api="cage.create.ae", poa=["127.0.0.1"]):
@@ -64,11 +65,11 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
-            print(res.text)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            return res.json()
             
         except RequestException:
-            pass
+            return None 
 
         
     def modifyAE(self, rn, **kwargs):
@@ -80,7 +81,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -94,15 +95,14 @@ class CSEInterface:
         rn: 삭제할 AE 이름 
         """
         try:
-            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
             pass
      
-    @logInfo("creating AE")
 
-    def createCNT(self, rn, lbl=["none"], mbs = 16384):
+    def createCNT(self, path, rn, lbl=["none"], mbs=16384):
         body = {
             "m2m:cnt":{
                 "rn":rn,
@@ -111,24 +111,24 @@ class CSEInterface:
             }
         }
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
-            print(res.text)
+            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            return res.json()
             
         except RequestException:
-            pass
+            return None
 
-    def getCNT(self, rn):
+    def getCNT(self, path):
         """
         CNT 조회
         ---
         rn: 조회할 CNT 이름 
         """
         try:
-            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
-            print(res.text)
+            res = req.get(url=f"{self.baseurl}/{path}", headers=self.headers)
+            return res.json()
             
         except RequestException:
-            pass
+            return None
 
     def modifyCNT(self, rn, **kwargs):
         """
@@ -140,11 +140,12 @@ class CSEInterface:
         body = {"m2m:cnt":kwargs}
 
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
             pass
+
 
     def deleteCNT(self, rn):
         """
@@ -153,14 +154,14 @@ class CSEInterface:
         rn: 삭제할 CNT 이름 
         """
         try:
-            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
             pass
             
             
-    def createCIN(self, con, url):
+    def createCIN(self, path, con):
         body = {
             "m2m:cin":{
                 "con": con
@@ -168,11 +169,11 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
-            print(res.text)
+            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            return res.json()
             
         except RequestException:
-            pass
+            return None
 
     def getCIN(self, rn, url):
         """
@@ -181,11 +182,11 @@ class CSEInterface:
         rn: 조회할 CIN 이름 
         """
         try:
-            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
-            print(res.text)
+            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
+            return res.json()
             
         except RequestException:
-            pass
+            return None
 
     def modifyCIN(self, rn, url, **kwargs):
         """
@@ -196,7 +197,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -209,11 +210,42 @@ class CSEInterface:
         rn: 삭제할 CIN 이름 
         """
         try:
-            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
             pass
+
+
+    def createGRP(self, path, rn, mid=[]):
+        body = {
+	    "m2m:grp": {
+		"rn": rn,
+		"mnm": 5,
+		"mid": mid
+	    }
+        }
+
+        try:
+            res = req.post(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            return res.json()
+            
+        except RequestException:
+            return None
+
+    def modifyGRP(self, path, mid=[]):
+        body = {
+            "m2m:grp": {
+                "mid": mid
+            }
+        }
+        try:
+            res = req.put(url=f"{self.baseurl}/{path}", headers=self.headers, json=body)
+            return res.json()
+            
+        except RequestException:
+            return None
+        
 
     def createACP(self, rn, acor1, acor2, acop1, acop2):
         body = {
@@ -245,7 +277,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -258,7 +290,7 @@ class CSEInterface:
         rn: 조회할 ACP 이름 
         """
         try:
-            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
@@ -273,7 +305,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -286,7 +318,7 @@ class CSEInterface:
         rn: 삭제할 ACP 이름 
         """
         try:
-            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
@@ -305,7 +337,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -318,7 +350,7 @@ class CSEInterface:
         rn: 조회할 Subscription 이름 
         """
         try:
-            res = req.get(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
@@ -333,7 +365,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.url, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=body)
             print(res.text)
             
         except RequestException:
@@ -346,8 +378,11 @@ class CSEInterface:
         rn: 삭제할 Subscription 이름 
         """
         try:
-            res = req.delete(url=f"{self.url}/{rn}", headers=self.headers)
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.headers)
             print(res.text)
             
         except RequestException:
             pass
+
+
+    
