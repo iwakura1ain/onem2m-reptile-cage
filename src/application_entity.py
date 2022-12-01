@@ -2,6 +2,9 @@ import cse_interface as cse
 import sensor_interface as sens
 from log.log import *
 
+from time import sleep
+import uuid as UUID
+
 
 def startAE(config): #TODO: error messages 
     """
@@ -10,33 +13,47 @@ def startAE(config): #TODO: error messages
     config : config 
     """
 
+    #create uuid 
+    try:
+        if config["AE"]["uuid"] == "":
+            with open("../config.ini", "w") as configfile:
+                config["AE"]["uuid"] = str(UUID.uuid4())
+                config.write(configfile)
+    except:
+        logError("error while creating uuid")
+        quit()
+        
+        
     #config file parsing, creating ae classes
     try:
         uuid = config["AE"]["uuid"]
         applicationEntity = ApplicationEntity(uuid, config["AE"])
         cseInterface = cse.CSEInterface(uuid, config["CSE"])
-
+        
         #add sensors to ae
         for name, sensorType in config["AE-SENSORS"]:
             applicationEntity.registerSensors(name, sensorType)
-        
+            
     except KeyError:
-        #config file error 
+        logError("error while parsing config file")
         quit()
-    
+        
+        
     #check if data structures exist on server -> if not create them 
     try:
         _ = applicationEntity.checkAE(cseInterface)
         _ = applicationEntity.checkGroup(cseInterface)
 
     except ConnectionError:
-        #no connection 
+        logError("error no connection")
         quit()
-      
+
+        
     #main loop
     while(True):
         sensorValues = applicationEntity.getSensorValues()
-        applicationEntity.sendSensorValues(cseInterface, sensorValues)      
+        applicationEntity.sendSensorValues(cseInterface, sensorValues)
+        sleep(applicationEntity.interval)
 
 
 class ApplicationEntity:
@@ -50,6 +67,8 @@ class ApplicationEntity:
     """
     
     def __init__(self, uuid, config):
+        self.interval = config["send_interval"]
+
         self.aeName = uuid
         self.groupName = config["group_name"]
         
@@ -86,8 +105,8 @@ class ApplicationEntity:
         """
         for name, val in sensorValues.iteritems():
             cseInterface.createCIN(path=f"{self.aeName}/{name}", con=val)
-
-
+            
+            
     def checkAE(self, cseInterface):
         """
         cse에 ae와 cnt 존재 확인 
@@ -105,7 +124,8 @@ class ApplicationEntity:
                     
             except: #no connection 
                 raise ConnectionError #TODO: error recovery when no connection
-
+            
+            
     def checkGroup(self, cseInterface):
         """
         group 내에 존재하는지 확인 존재 확인 

@@ -3,17 +3,12 @@
 import src.application_entity as ae
 import src.log.log as log
 
-import configparser, uuid
+import configparser
 
 def main():
     config = configparser.ConfigParser()
     config.read("config.ini")
-
-    if config["AE"]["uuid"] == "":
-        with open("config.ini", "w") as configfile:
-            config["AE"]["uuid"] = str(uuid.uuid4())
-            config.write(configfile)
-            
+        
     log.startLogger(config)
     ae.startAE(config)
 
