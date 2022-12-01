@@ -1,6 +1,7 @@
 from random import randint
 from string import ascii_letters
-import time, board, adafruit_dht,picamera
+import time
+#import board, adafruit_dht, picamera
 
 
 class SensorInterface:
@@ -13,6 +14,7 @@ class SensorInterface:
     ---    
     """
     read_functions = {}
+    picam2 = None
     
     @classmethod
     def addSensorInterface(cls, sensorType, interface=None):
@@ -22,6 +24,10 @@ class SensorInterface:
         sensorType : sensor type 
         interface : sensor read 하는 wrapper 함수 이름
         """
+        # if sensorType == "cameraSensor" or interface == "cameraSensor":
+        #     cls.picam2 = Picamera2()
+        #     cls.picam2.start()
+        
         if interface is None:
             cls.read_functions.update({sensorType: getattr(cls, sensorType)})
         else:
@@ -35,17 +41,17 @@ class SensorInterface:
     def randomStr(**kwargs):
         return ascii_letters[randint(0, 10):randint(10, 20)]      
     
-     @staticmethod
-    def TempSensor():
-       return adafruit_dht.DHT11(board.D18).temperature
+    #  @staticmethod
+    # def tempSensor(**kwargs):
+    #    return adafruit_dht.DHT11(board.D18).temperature
 
-    @staticmethod
-    def HumiditySensor():
-       return adafruit_dht.DHT11(board.D18).humidity
+    # @staticmethod
+    # def humiditySensor(**kwargs):
+    #    return adafruit_dht.DHT11(board.D18).humidity
     
-    @staticmethod
-    def CameraSensor():
-        return picamera.PiCamera.capture('Cage.jpeg')
+    # @staticmethod
+    # def cameraSensor(**kwargs):
+    #     return picam2.capture_image()
 
 
 class Sensor(SensorInterface):
@@ -60,7 +66,8 @@ class Sensor(SensorInterface):
         self.name = name
         self.sensorType = sensorType
         type(self).addSensorInterface(sensorType, interface)
-    
+
+        
     def readSensor(self, **kwargs):
         """
         센서값 읽어오는 함수 

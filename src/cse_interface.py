@@ -1,7 +1,6 @@
 import requests as req
-from requests.exeptions import RequestException 
+from requests.exceptions import RequestException
 import json
-import uuid
 
 class CSEInterface:
     """
@@ -29,6 +28,13 @@ class CSEInterface:
             "Accept": "application/json",
             "X-M2M-RI": "req" + self.uuid,
             "X-M2M-Origin": "S" + self.uuid,
+            "Content-Type": "application/vnd.onem2m-res+json;ty=2"
+        }
+
+        self.adminHeaders = {
+            "Accept": "application/json",
+            "X-M2M-RI": "dks",
+            "X-M2M-Origin": "dks",
             "Content-Type": "application/vnd.onem2m-res+json;ty=2"
         }
                 
@@ -141,7 +147,7 @@ class CSEInterface:
         body = {"m2m:cnt":kwargs}
 
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
@@ -170,7 +176,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=json.dumps(body))
             return res.json()
             
         except RequestException:
@@ -198,7 +204,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
@@ -228,7 +234,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}", headers=self.headers, json=body)
+            res = req.post(url=f"{self.baseurl}", headers=self.headers, json=json.dumps(body))
             return res.json()
             
         except RequestException:
@@ -248,8 +254,9 @@ class CSEInterface:
                 "mid": mid
             }
         }
+        
         try:
-            res = req.put(url=f"{self.baseurl}{path}{rn}", headers=self.headers, json=body)
+            res = req.put(url=f"{self.baseurl}{path}{rn}", headers=self.adminHeaders, json=body)
             return res.json()
             
         except RequestException:
@@ -286,7 +293,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
@@ -314,7 +321,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
@@ -346,7 +353,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
@@ -374,7 +381,7 @@ class CSEInterface:
         """
         body = {"m2m:ae": kwargs}
         try:
-            res = req.post(url=self.baseurl, headers=self.headers, json=body)
+            res = req.post(url=self.baseurl, headers=self.headers, json=json.dumps(body))
             print(res.text)
             
         except RequestException:
