@@ -1,7 +1,7 @@
 from random import randint
 from string import ascii_letters
 import time
-#import board, adafruit_dht, picamera
+import board, adafruit_dht, picamera
 
 
 class SensorInterface:
@@ -24,9 +24,6 @@ class SensorInterface:
         sensorType : sensor type 
         interface : sensor read 하는 wrapper 함수 이름
         """
-        # if sensorType == "cameraSensor" or interface == "cameraSensor":
-        #     cls.picam2 = Picamera2()
-        #     cls.picam2.start()
         
         if interface is None:
             cls.read_functions.update({sensorType: getattr(cls, sensorType)})
@@ -41,28 +38,33 @@ class SensorInterface:
     def randomStr(**kwargs):
         return ascii_letters[randint(0, 10):randint(10, 20)]      
     
-    #  @staticmethod
-    # def tempSensor(**kwargs):
-    #    return adafruit_dht.DHT11(board.D18).temperature
+     @staticmethod
+    def tempSensor(**kwargs):
+        try: 
+            return adafruit_dht.DHT11(board.D18).temperature
+        except:
+            return 0
 
-    # @staticmethod
-    # def humiditySensor(**kwargs):
-    #    return adafruit_dht.DHT11(board.D18).humidity
+    @staticmethod
+    def humiditySensor(**kwargs):
+        try:
+            return adafruit_dht.DHT11(board.D18).humidity
+        except:
+            return 0
     
-
     @staticmethod
     def CameraSensor():
         try:
-            picam2.start()
-            time.sleep(3)
+            if picam2 is None:
+                picam2 = Picamera2()
+                picam2.start()
+        
             image = picam2.switch_mode_and_capture_image(capture_config)
             return image
-        except:
-           global Image
-           file = Image.open("test.jpg")
-           return file
->>>>>>> 56Lee-patch-1
 
+        except:
+            return Image.open("test.jpg")
+            
 
 class Sensor(SensorInterface):
     """
