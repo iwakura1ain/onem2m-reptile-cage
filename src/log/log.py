@@ -14,7 +14,8 @@ def startLogger(config):
     config = config["LOG"]
     global logger
     if logger is None:
-        logging.basicConfig(filename=config["log_dir"]+config["log_name"], level=config["log_level"])
+        #logging.basicConfig(filename=config["log_dir"]+config["log_name"], level=config["log_level"])
+        logging.basicConfig(filename=config["log_dir"]+config["log_name"], level=logging.INFO)
         logger = logging.getLogger(config["log_name"])
         
 def logInfo(logStr):

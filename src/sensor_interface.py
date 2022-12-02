@@ -1,6 +1,7 @@
 from random import randint
 from string import ascii_letters
-import time, board, adafruit_dht,picamera
+import time
+import board, adafruit_dht, picamera
 
 
 class SensorInterface:
@@ -13,6 +14,7 @@ class SensorInterface:
     ---    
     """
     read_functions = {}
+    picam2 = None
     
     @classmethod
     def addSensorInterface(cls, sensorType, interface=None):
@@ -22,6 +24,7 @@ class SensorInterface:
         sensorType : sensor type 
         interface : sensor read 하는 wrapper 함수 이름
         """
+        
         if interface is None:
             cls.read_functions.update({sensorType: getattr(cls, sensorType)})
         else:
@@ -36,25 +39,32 @@ class SensorInterface:
         return ascii_letters[randint(0, 10):randint(10, 20)]      
     
      @staticmethod
-    def TempSensor():
-       return adafruit_dht.DHT11(board.D18).temperature
+    def tempSensor(**kwargs):
+        try: 
+            return adafruit_dht.DHT11(board.D18).temperature
+        except:
+            return 0
 
     @staticmethod
-    def HumiditySensor():
-       return adafruit_dht.DHT11(board.D18).humidity
+    def humiditySensor(**kwargs):
+        try:
+            return adafruit_dht.DHT11(board.D18).humidity
+        except:
+            return 0
     
     @staticmethod
     def CameraSensor():
         try:
-            picam2.start()
-            time.sleep(3)
+            if picam2 is None:
+                picam2 = Picamera2()
+                picam2.start()
+        
             image = picam2.switch_mode_and_capture_image(capture_config)
             return image
-        except:
-           global Image
-           file = Image.open("test.jpg")
-           return file
 
+        except:
+            return Image.open("test.jpg")
+            
 
 class Sensor(SensorInterface):
     """
@@ -68,7 +78,8 @@ class Sensor(SensorInterface):
         self.name = name
         self.sensorType = sensorType
         type(self).addSensorInterface(sensorType, interface)
-    
+
+        
     def readSensor(self, **kwargs):
         """
         센서값 읽어오는 함수 

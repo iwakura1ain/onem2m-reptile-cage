@@ -1,0 +1,295 @@
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/60237811-4d68-4e63-b0f3-34ec72a803cb HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/64ade6b9-c3d9-42c3-b242-2b24e1aa96b4 HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 404 54
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 201 304
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
+ERROR:test.log:error no connection
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 273
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 403 27
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 331
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
+DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
+INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:registering sensors
+INFO:test.log:checking AE on server
+INFO:test.log:AE verified
+INFO:test.log:checking group on server
+INFO:test.log:group verified
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 4708, 'test2': 'fghijklmnopq'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 4708
+INFO:test.log:sent test2 : fghijklmnopq
+INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:registering sensors
+INFO:test.log:checking AE on server
+INFO:test.log:AE verified
+INFO:test.log:checking group on server
+INFO:test.log:group verified
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -7412, 'test2': 'hijklmnopqr'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -7412
+INFO:test.log:sent test2 : hijklmnopqr
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -620, 'test2': 'defghijklmno'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -620
+INFO:test.log:sent test2 : defghijklmno
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 309, 'test2': 'fghijklmnopq'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 309
+INFO:test.log:sent test2 : fghijklmnopq
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 72, 'test2': 'abcdefghijklmno'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 72
+INFO:test.log:sent test2 : abcdefghijklmno
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -8422, 'test2': 'ghijklmno'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -8422
+INFO:test.log:sent test2 : ghijklmno
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -427, 'test2': 'klm'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -427
+INFO:test.log:sent test2 : klm
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 645, 'test2': 'jklmnopq'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 645
+INFO:test.log:sent test2 : jklmnopq
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -1310, 'test2': 'k'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -1310
+INFO:test.log:sent test2 : k
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 1443, 'test2': 'klmno'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 1443
+INFO:test.log:sent test2 : klmno
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -8690, 'test2': 'ij'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -8690
+INFO:test.log:sent test2 : ij
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 8953, 'test2': 'defghijkl'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 8953
+INFO:test.log:sent test2 : defghijkl
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -7769, 'test2': 'bcdefghijkl'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -7769
+INFO:test.log:sent test2 : bcdefghijkl
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -5543, 'test2': 'bcdefghijk'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -5543
+INFO:test.log:sent test2 : bcdefghijk
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 8551, 'test2': 'ijklmno'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 8551
+INFO:test.log:sent test2 : ijklmno
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -6740, 'test2': 'abcdefghij'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -6740
+INFO:test.log:sent test2 : abcdefghij
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 1661, 'test2': 'ijklmnopq'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 1661
+INFO:test.log:sent test2 : ijklmnopq
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': -7881, 'test2': ''}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : -7881
+INFO:test.log:sent test2 : 
+INFO:test.log:reading sensor values
+INFO:test.log:sensor read: 
+{'test1': 9054, 'test2': 'hijklmn'}
+INFO:test.log:sending sensor values
+INFO:test.log:sent test1 : 9054
+INFO:test.log:sent test2 : hijklmn
