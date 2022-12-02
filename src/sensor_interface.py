@@ -1,7 +1,8 @@
 from random import randint
 from string import ascii_letters
-import time, board, adafruit_dht,picamera
-
+import time, board, adafruit_dht
+from picamera2 import Picamera2, Preview
+from PIL import Image
 
 class SensorInterface:
     """
@@ -12,6 +13,26 @@ class SensorInterface:
     - readSensor를 사용해 센서 읽음     
     ---    
     """
+    
+    picam2 = Picamera2()
+    picam2.start_preview(Preview.NULL)
+    preview_config = picam2.create_preview_configuration(main={"size": (1024, 768)})
+    capture_config = picam2.create_still_configuration(main={"size": (1024, 768)})
+    picam2.configure(preview_config)
+
+
+    @staticmethod
+    def CameraSensor():
+        try:
+            SensorInterface.picam2.start()
+            time.sleep(3)
+            image = SensorInterface.picam2.switch_mode_and_capture_image(SensorInterface.capture_config)
+            return image
+        except:
+           global Image
+           file = Image.open("test.jpg")
+           return file
+
     read_functions = {}
     
     @classmethod
