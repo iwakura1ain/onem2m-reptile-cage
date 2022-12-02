@@ -45,7 +45,15 @@ class SensorInterface:
     
     @staticmethod
     def CameraSensor():
-        return picamera.PiCamera.capture('Cage.jpeg')
+        try:
+            picam2.start()
+            time.sleep(3)
+            image = picam2.switch_mode_and_capture_image(capture_config)
+            return image
+        except:
+           global Image
+           file = Image.open("test.jpg")
+           return file
 
 
 class Sensor(SensorInterface):
