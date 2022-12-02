@@ -49,9 +49,19 @@ class SensorInterface:
     # def humiditySensor(**kwargs):
     #    return adafruit_dht.DHT11(board.D18).humidity
     
-    # @staticmethod
-    # def cameraSensor(**kwargs):
-    #     return picam2.capture_image()
+
+    @staticmethod
+    def CameraSensor():
+        try:
+            picam2.start()
+            time.sleep(3)
+            image = picam2.switch_mode_and_capture_image(capture_config)
+            return image
+        except:
+           global Image
+           file = Image.open("test.jpg")
+           return file
+>>>>>>> 56Lee-patch-1
 
 
 class Sensor(SensorInterface):
