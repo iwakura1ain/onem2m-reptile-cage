@@ -1,7 +1,11 @@
-from random import randint
-from string import ascii_letters
 import time
 import board, adafruit_dht, picamera
+from PIL import Image
+from io import BytesIO
+import base64
+
+from random import randint
+from string import ascii_letters
 
 
 class SensorInterface:
@@ -59,11 +63,19 @@ class SensorInterface:
                 picam2 = Picamera2()
                 picam2.start()
         
-            image = picam2.switch_mode_and_capture_image(capture_config)
-            return image
+            image =  picam2.capture_image(main={"size": (1024, 768)})
 
+            buff = BytesIO()
+            image.save(buff, format="JPEG")
+            return base64.b64encode(buff.getvalue())
+            
         except:
-            return Image.open("test.jpg")
+            image = Image.open("test.jpg")
+
+            buff = BytesIO()
+            image.save(buff, format="JPEG")
+            return base64.b64encode(buff.getvalue())
+
             
 
 class Sensor(SensorInterface):

@@ -17,9 +17,9 @@ def startAE(config): #TODO: error messages
     #create uuid 
     try:
         if config["AE"]["uuid"] == "":
-            with open("config.ini", "w") as configfile:
+            with open("config.ini", "w+") as configfile:
                 uuid = str(UUID.uuid4())
-                config["AE"]["uuid"] = uuid
+                config.set("AE", "uuid", uuid)
                 config.write(configfile)
                 
                 logInfo(f"new UUID: {uuid}")
@@ -59,12 +59,10 @@ def startAE(config): #TODO: error messages
 
         
     #main loop
-    while(True):
-        sensorValues = applicationEntity.getSensorValues()
-        logInfo(f"sensor read: \n{sensorValues}")
-        
+    while not sleep(int(applicationEntity.interval)):
+        sensorValues = applicationEntity.getSensorValues()       
         applicationEntity.sendSensorValues(cseInterface, sensorValues)
-        sleep(int(applicationEntity.interval))
+        applicationEntity.checkControl(cseInterface)
 
 
 class ApplicationEntity:
@@ -84,7 +82,9 @@ class ApplicationEntity:
         self.groupName = config["group_name"]
         
         self.sensors = {}
-    
+        self.control = {}
+
+        
     @logCall("registering sensors")
     def registerSensors(self, name, sensorType, interface=None):
         """
@@ -95,7 +95,7 @@ class ApplicationEntity:
         interface : 센서 wrapper 함수 
         """
         new = sens.Sensor(name, sensorType, interface)
-        self.sensors.update({name: new})
+        self.sensors[name] = new
         
 
     @logCall("reading sensor values")
@@ -108,22 +108,25 @@ class ApplicationEntity:
         retval = {}
         for name, s in self.sensors.items():
             retval[name] = s.readSensor(**kwargs)
+            logInfo(f"read {name} : {retval[name]}")
         
         return retval
 
+    
     @logCall("sending sensor values")
     def sendSensorValues(self, cseInterface, sensorValues):
         """
         센서값 cse로 보내는 함수 
         """
 
-        for name, val in sensorValues.items():
+        for name, val in (sensorValues | self.control).items():
             res = cseInterface.createCIN(path=f"{self.aeName}/{name}", con=val)
             if res is None:
                 logError(f"error while sending  {name} : {val}")
             else:
                 logInfo(f"sent {name} : {val}")
 
+                
     @logCall("checking AE on server")
     def checkAE(self, cseInterface):
         """
@@ -171,11 +174,24 @@ class ApplicationEntity:
             # no connection
             except:
                 raise ConnectionError #TODO: error recovery when no connection
-
-
-
             
-    
+            
+    @logCall("checking control messages from dashboard")
+    def checkControl(self, cseInterface):
+        for name, s in self.sensors.items():
+            try:
+                res = cseInterface.getCIN(rn="/la", path=f"/{self.aeName}/{name}/control")
+                res = res["m2m:cin"]["con"]
+
+                if self.control[name] != res:
+                    logInfo(f"received control from dashboard {name} : {res}")
+                    self.control[name] = res
+                
+            except KeyError:
+                pass
+
+
+        
     
 
 
