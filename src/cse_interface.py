@@ -224,17 +224,17 @@ class CSEInterface:
             pass
 
 
-    def createGRP(self, rn, mid=[]):
+    def createGRP(self, rn, mid=""):
         body = {
 	    "m2m:grp": {
 		"rn": rn,
 		"mnm": 5,
-		"mid": mid
+		"mid": [f"Mobius/{mid}"]
 	    }
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}", headers=self.headers, json=json.dumps(body))
+            res = req.post(url=f"{self.baseurl}", headers=self.adminHeaders, json=body)
             return res.json()
             
         except RequestException:
@@ -242,7 +242,7 @@ class CSEInterface:
 
     def getGRP(self, rn):
         try:
-            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.headers)
+            res = req.get(url=f"{self.baseurl}/{rn}", headers=self.adminHeaders)
             return res.json()
             
         except RequestException:

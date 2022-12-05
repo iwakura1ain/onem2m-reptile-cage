@@ -1,5 +1,5 @@
 import time
-import board, adafruit_dht, picamera
+#import board, adafruit_dht, picamera
 from PIL import Image
 from io import BytesIO
 import base64
@@ -42,39 +42,39 @@ class SensorInterface:
     def randomStr(**kwargs):
         return ascii_letters[randint(0, 10):randint(10, 20)]      
     
-     @staticmethod
-    def tempSensor(**kwargs):
-        try: 
-            return adafruit_dht.DHT11(board.D18).temperature
-        except:
-            return 0
+    # @staticmethod
+    # def tempSensor(**kwargs):
+    #     try: 
+    #         return adafruit_dht.DHT11(board.D18).temperature
+    #     except:
+    #         return 0
 
-    @staticmethod
-    def humiditySensor(**kwargs):
-        try:
-            return adafruit_dht.DHT11(board.D18).humidity
-        except:
-            return 0
+    # @staticmethod
+    # def humiditySensor(**kwargs):
+    #     try:
+    #         return adafruit_dht.DHT11(board.D18).humidity
+    #     except:
+    #         return 0
     
-    @staticmethod
-    def CameraSensor():
-        try:
-            if picam2 is None:
-                picam2 = Picamera2()
-                picam2.start()
+    # @staticmethod
+    # def CameraSensor():
+    #     try:
+    #         if picam2 is None:
+    #             picam2 = Picamera2()
+    #             picam2.start()
         
-            image =  picam2.capture_image(main={"size": (1024, 768)})
+    #         image =  picam2.capture_image(main={"size": (1024, 768)})
 
-            buff = BytesIO()
-            image.save(buff, format="JPEG")
-            return base64.b64encode(buff.getvalue())
+    #         buff = BytesIO()
+    #         image.save(buff, format="JPEG")
+    #         return base64.b64encode(buff.getvalue())
             
-        except:
-            image = Image.open("test.jpg")
+    #     except:
+    #         image = Image.open("test.jpg")
 
-            buff = BytesIO()
-            image.save(buff, format="JPEG")
-            return base64.b64encode(buff.getvalue())
+    #         buff = BytesIO()
+    #         image.save(buff, format="JPEG")
+    #         return base64.b64encode(buff.getvalue())
 
             
 
