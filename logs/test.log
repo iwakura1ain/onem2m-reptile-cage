@@ -1,1091 +1,459 @@
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/60237811-4d68-4e63-b0f3-34ec72a803cb HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/64ade6b9-c3d9-42c3-b242-2b24e1aa96b4 HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/ff9187c7-fcb1-429c-8f87-e998fb0190e3 HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/c35380d1-d5e8-452a-b8a9-7d7477ef7b5d HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/4cdec23a-c61f-4f2c-83a9-733c415c9124 HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 404 54
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 201 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 201 304
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 318
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 121
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 400 64
-ERROR:test.log:error no connection
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 273
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 403 27
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobius HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 331
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/b0b12918-9177-41c3-9610-5b20af8ec5be HTTP/1.1" 200 321
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "GET /Mobius/test-grp1 HTTP/1.1" 200 285
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "PUT /Mobius/test-grp1 HTTP/1.1" 200 331
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test1 HTTP/1.1" 400 64
-DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 182.221.64.162:7579
-DEBUG:urllib3.connectionpool:http://182.221.64.162:7579 "POST /Mobiusb0b12918-9177-41c3-9610-5b20af8ec5be/test2 HTTP/1.1" 400 64
-INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:Sensor temperature : randomVal registered
 INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:Sensor humidity : randomVal registered
 INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 4708, 'test2': 'fghijklmnopq'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4708
-INFO:test.log:sent test2 : fghijklmnopq
-INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:Sensor brightness : randomVal registered
 INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -7412, 'test2': 'hijklmnopqr'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7412
-INFO:test.log:sent test2 : hijklmnopqr
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -620, 'test2': 'defghijklmno'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -620
-INFO:test.log:sent test2 : defghijklmno
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 309, 'test2': 'fghijklmnopq'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 309
-INFO:test.log:sent test2 : fghijklmnopq
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 72, 'test2': 'abcdefghijklmno'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 72
-INFO:test.log:sent test2 : abcdefghijklmno
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -8422, 'test2': 'ghijklmno'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8422
-INFO:test.log:sent test2 : ghijklmno
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -427, 'test2': 'klm'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -427
-INFO:test.log:sent test2 : klm
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 645, 'test2': 'jklmnopq'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 645
-INFO:test.log:sent test2 : jklmnopq
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -1310, 'test2': 'k'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1310
-INFO:test.log:sent test2 : k
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 1443, 'test2': 'klmno'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 1443
-INFO:test.log:sent test2 : klmno
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -8690, 'test2': 'ij'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8690
-INFO:test.log:sent test2 : ij
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 8953, 'test2': 'defghijkl'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 8953
-INFO:test.log:sent test2 : defghijkl
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -7769, 'test2': 'bcdefghijkl'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7769
-INFO:test.log:sent test2 : bcdefghijkl
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -5543, 'test2': 'bcdefghijk'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5543
-INFO:test.log:sent test2 : bcdefghijk
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 8551, 'test2': 'ijklmno'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 8551
-INFO:test.log:sent test2 : ijklmno
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -6740, 'test2': 'abcdefghij'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -6740
-INFO:test.log:sent test2 : abcdefghij
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 1661, 'test2': 'ijklmnopq'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 1661
-INFO:test.log:sent test2 : ijklmnopq
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': -7881, 'test2': ''}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7881
-INFO:test.log:sent test2 : 
-INFO:test.log:reading sensor values
-INFO:test.log:sensor read: 
-{'test1': 9054, 'test2': 'hijklmn'}
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 9054
-INFO:test.log:sent test2 : hijklmn
-INFO:test.log:new UUID: 9933e666-68ae-41b2-b917-ea72ecf8ab0d
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -3213
-INFO:test.log:read test2 : bcdefghijklmnopqrst
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -3213
-INFO:test.log:sent test2 : bcdefghijklmnopqrst
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -7963
-INFO:test.log:read test2 : bcdefghijkl
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7963
-INFO:test.log:sent test2 : bcdefghijkl
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -815
-INFO:test.log:read test2 : cdefghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -815
-INFO:test.log:sent test2 : cdefghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4212
-INFO:test.log:read test2 : efghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4212
-INFO:test.log:sent test2 : efghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: ba4b3a44-1ac4-478e-a0de-78c9c6142867
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-ERROR:test.log:error no connection
-INFO:test.log:new UUID: b8c2b977-287a-4da1-89b7-01b0e5c34181
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-ERROR:test.log:error no connection
-INFO:test.log:new UUID: 83004d86-4680-41a4-912f-7ccb5d45aed2
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-ERROR:test.log:error no connection
-INFO:test.log:new UUID: 5ad5754a-6fa5-47b9-8ed8-9c6c1ad6aa01
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 120d0dee-fd2f-4d97-b45c-8a75047c2ae4
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 7bf17925-63d5-459b-9eb6-5394ff568544
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 995ce1e0-a945-43a6-b893-cf96df831276
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-ERROR:test.log:error no connection
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 1aac1511-745d-4cd0-a313-000f7aadec64
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 7016
-INFO:test.log:read test2 : abcdefghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 7016
-INFO:test.log:sent test2 : abcdefghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -7546
-INFO:test.log:read test2 : ghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7546
-INFO:test.log:sent test2 : ghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -7472
-INFO:test.log:read test2 : defghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7472
-INFO:test.log:sent test2 : defghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -3250
-INFO:test.log:read test2 : cdefghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -3250
-INFO:test.log:sent test2 : cdefghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -9471
-INFO:test.log:read test2 : k
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -9471
-INFO:test.log:sent test2 : k
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4187
-INFO:test.log:read test2 : efghijklmnopqrst
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4187
-INFO:test.log:sent test2 : efghijklmnopqrst
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -7019
-INFO:test.log:read test2 : ghijklmnopqrs
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7019
-INFO:test.log:sent test2 : ghijklmnopqrs
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -6794
-INFO:test.log:read test2 : ghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -6794
-INFO:test.log:sent test2 : ghijklmnopq
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4948
-INFO:test.log:read test2 : hijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4948
-INFO:test.log:sent test2 : hijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -6777
-INFO:test.log:read test2 : bcdefghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -6777
-INFO:test.log:sent test2 : bcdefghijklmnopq
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1964
-INFO:test.log:read test2 : jklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1964
-INFO:test.log:sent test2 : jklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5864
-INFO:test.log:read test2 : fghijklmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5864
-INFO:test.log:sent test2 : fghijklmnop
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -7554
-INFO:test.log:read test2 : ghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -7554
-INFO:test.log:sent test2 : ghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -11
-INFO:test.log:read test2 : k
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -11
-INFO:test.log:sent test2 : k
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: 9de60627-cfa8-456c-9327-3b9f1120cb43
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -5404
-INFO:test.log:read test2 : abcdefghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5404
-INFO:test.log:sent test2 : abcdefghijk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6987
-INFO:test.log:read test2 : bcdefghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6987
-INFO:test.log:sent test2 : bcdefghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -5177
-INFO:test.log:read test2 : cdefghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5177
-INFO:test.log:sent test2 : cdefghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5806
-INFO:test.log:read test2 : bcdefghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5806
-INFO:test.log:sent test2 : bcdefghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6479
-INFO:test.log:read test2 : defghij
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6479
-INFO:test.log:sent test2 : defghij
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5448
-INFO:test.log:read test2 : ghijkl
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5448
-INFO:test.log:sent test2 : ghijkl
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 28
-INFO:test.log:read test2 : jk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 28
-INFO:test.log:sent test2 : jk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6280
-INFO:test.log:read test2 : fghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6280
-INFO:test.log:sent test2 : fghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 1960
-INFO:test.log:read test2 : fghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 1960
-INFO:test.log:sent test2 : fghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 3998
-INFO:test.log:read test2 : efghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 3998
-INFO:test.log:sent test2 : efghijk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: 94844569-3cf5-44c5-a2ee-96fd803c8832
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -9792
-INFO:test.log:read test2 : cdefghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -9792
-INFO:test.log:sent test2 : cdefghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: df98be5d-b7ae-4db6-a085-f3c820b9fc03
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 769c07f1-5ee1-463f-bd57-c49a6be0ffde
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-ERROR:test.log:error no connection
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:group verified
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 254
-INFO:test.log:read test2 : ghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 254
-INFO:test.log:sent test2 : ghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: 576b6cf0-7b75-4ff9-a4a2-570dd6fec4d9
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 365439a6-8be3-45ba-b5bb-a70788063984
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:checking group on server
-INFO:test.log:new UUID: 678b2237-81c6-432a-bfff-90c6d8173681
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
-INFO:test.log:registering sensors
-INFO:test.log:checking AE on server
-INFO:test.log:AE verified
-INFO:test.log:new UUID: 56ae8c26-72e4-4f93-a0fb-f14ae8742653
-INFO:test.log:Sensor test1 : randomVal registered
-INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:Sensor camera : cameraSensor registered
 INFO:test.log:registering sensors
 INFO:test.log:checking AE on server
 INFO:test.log:AE verified
 INFO:test.log:group verified
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -863
-INFO:test.log:read test2 : ijkl
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -863
-INFO:test.log:sent test2 : ijkl
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 9108
-INFO:test.log:read test2 : defghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 9108
-INFO:test.log:sent test2 : defghijklm
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5323
-INFO:test.log:read test2 : bcdefghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5323
-INFO:test.log:sent test2 : bcdefghijklmnopq
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: 649f8f37-63d1-4f9d-a59d-04b48a19c022
-INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:reading sensor values
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
+INFO:test.log:checking control messages from dashboard
+INFO:test.log:Sensor temperature : randomVal registered
 INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:Sensor humidity : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor brightness : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor camera : cameraSensor registered
 INFO:test.log:registering sensors
 INFO:test.log:checking AE on server
 INFO:test.log:AE verified
 INFO:test.log:group verified
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4431
-INFO:test.log:read test2 : klmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4431
-INFO:test.log:sent test2 : klmnop
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:new UUID: 0681ef88-7af0-472b-a792-70e326b25f76
-INFO:test.log:Sensor test1 : randomVal registered
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:Sensor temperature : randomVal registered
 INFO:test.log:registering sensors
-INFO:test.log:Sensor test2 : randomStr registered
+INFO:test.log:Sensor humidity : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor brightness : randomVal registered
+INFO:test.log:registering sensors
+INFO:test.log:Sensor camera : cameraSensor registered
 INFO:test.log:registering sensors
 INFO:test.log:checking AE on server
 INFO:test.log:AE verified
 INFO:test.log:group verified
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -6822
-INFO:test.log:read test2 : bcdefghijklmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -6822
-INFO:test.log:sent test2 : bcdefghijklmnop
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 2317
-INFO:test.log:read test2 : cdefghijklmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 2317
-INFO:test.log:sent test2 : cdefghijklmnop
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4891
-INFO:test.log:read test2 : cdefghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4891
-INFO:test.log:sent test2 : cdefghijklm
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6803
-INFO:test.log:read test2 : fghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6803
-INFO:test.log:sent test2 : fghijk
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -5200
-INFO:test.log:read test2 : jklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5200
-INFO:test.log:sent test2 : jklmnopq
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 9397
-INFO:test.log:read test2 : efghijklmnopqrst
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 9397
-INFO:test.log:sent test2 : efghijklmnopqrst
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1946
-INFO:test.log:read test2 : klmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1946
-INFO:test.log:sent test2 : klmn
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4381
-INFO:test.log:read test2 : defghij
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4381
-INFO:test.log:sent test2 : defghij
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -9109
-INFO:test.log:read test2 : efghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -9109
-INFO:test.log:sent test2 : efghijklmnopqr
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4844
-INFO:test.log:read test2 : bcdefghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4844
-INFO:test.log:sent test2 : bcdefghijklmnopq
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 9728
-INFO:test.log:read test2 : hijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 9728
-INFO:test.log:sent test2 : hijk
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5984
-INFO:test.log:read test2 : defghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5984
-INFO:test.log:sent test2 : defghijklmnopqr
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -8252
-INFO:test.log:read test2 : ijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8252
-INFO:test.log:sent test2 : ijklm
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1998
-INFO:test.log:read test2 : cdefghijklmnopqrs
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1998
-INFO:test.log:sent test2 : cdefghijklmnopqrs
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 516
-INFO:test.log:read test2 : ghijklmnopqrs
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 516
-INFO:test.log:sent test2 : ghijklmnopqrs
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -2344
-INFO:test.log:read test2 : ijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -2344
-INFO:test.log:sent test2 : ijklmnopq
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 9883
-INFO:test.log:read test2 : defghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 9883
-INFO:test.log:sent test2 : defghijklm
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 5154
-INFO:test.log:read test2 : klmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 5154
-INFO:test.log:sent test2 : klmnopqr
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 8907
-INFO:test.log:read test2 : bcdefghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 8907
-INFO:test.log:sent test2 : bcdefghijklmnopq
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -5219
-INFO:test.log:read test2 : klmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5219
-INFO:test.log:sent test2 : klmnopqr
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard
 INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 7657
-INFO:test.log:read test2 : bcdefghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 7657
-INFO:test.log:sent test2 : bcdefghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4345
-INFO:test.log:read test2 : ghijklmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4345
-INFO:test.log:sent test2 : ghijklmnop
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -8979
-INFO:test.log:read test2 : defghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8979
-INFO:test.log:sent test2 : defghijklmnopq
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1515
-INFO:test.log:read test2 : ghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1515
-INFO:test.log:sent test2 : ghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 934
-INFO:test.log:read test2 : 
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 934
-INFO:test.log:sent test2 : 
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4765
-INFO:test.log:read test2 : cdefghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4765
-INFO:test.log:sent test2 : cdefghijk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -5002
-INFO:test.log:read test2 : efghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -5002
-INFO:test.log:sent test2 : efghijk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -3408
-INFO:test.log:read test2 : cdefghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -3408
-INFO:test.log:sent test2 : cdefghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4822
-INFO:test.log:read test2 : jklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4822
-INFO:test.log:sent test2 : jklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 959
-INFO:test.log:read test2 : abcdefghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 959
-INFO:test.log:sent test2 : abcdefghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -3156
-INFO:test.log:read test2 : cdefghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -3156
-INFO:test.log:sent test2 : cdefghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -9294
-INFO:test.log:read test2 : defghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -9294
-INFO:test.log:sent test2 : defghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6491
-INFO:test.log:read test2 : bcdefghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6491
-INFO:test.log:sent test2 : bcdefghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -300
-INFO:test.log:read test2 : abcdefghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -300
-INFO:test.log:sent test2 : abcdefghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -4170
-INFO:test.log:read test2 : jklmnopqrs
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -4170
-INFO:test.log:sent test2 : jklmnopqrs
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 397
-INFO:test.log:read test2 : jklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 397
-INFO:test.log:sent test2 : jklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 7887
-INFO:test.log:read test2 : jklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 7887
-INFO:test.log:sent test2 : jklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4938
-INFO:test.log:read test2 : jk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4938
-INFO:test.log:sent test2 : jk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 6260
-INFO:test.log:read test2 : klmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 6260
-INFO:test.log:sent test2 : klmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1121
-INFO:test.log:read test2 : fghijklmno
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1121
-INFO:test.log:sent test2 : fghijklmno
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 1681
-INFO:test.log:read test2 : ghijklmn
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 1681
-INFO:test.log:sent test2 : ghijklmn
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -2746
-INFO:test.log:read test2 : fghijklmnopqrst
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -2746
-INFO:test.log:sent test2 : fghijklmnopqrst
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -8903
-INFO:test.log:read test2 : bcdefghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8903
-INFO:test.log:sent test2 : bcdefghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 3711
-INFO:test.log:read test2 : efghijklmnop
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 3711
-INFO:test.log:sent test2 : efghijklmnop
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -1243
-INFO:test.log:read test2 : ijklmnopqrs
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -1243
-INFO:test.log:sent test2 : ijklmnopqrs
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -3822
-INFO:test.log:read test2 : fghijklm
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -3822
-INFO:test.log:sent test2 : fghijklm
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -197
-INFO:test.log:read test2 : abcdefghijklmnopqr
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -197
-INFO:test.log:sent test2 : abcdefghijklmnopqr
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -8943
-INFO:test.log:read test2 : cdefghijk
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -8943
-INFO:test.log:sent test2 : cdefghijk
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 7422
-INFO:test.log:read test2 : efghijklmnopqrst
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 7422
-INFO:test.log:sent test2 : efghijklmnopqrst
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 4491
-INFO:test.log:read test2 : cdefghijklmnopq
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : 4491
-INFO:test.log:sent test2 : cdefghijklmnopq
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : -6163
-INFO:test.log:read test2 : abcdefghij
-INFO:test.log:sending sensor values
-INFO:test.log:sent test1 : -6163
-INFO:test.log:sent test2 : abcdefghij
-INFO:test.log:checking control messages from dashboard
-INFO:test.log:reading sensor values
-INFO:test.log:read test1 : 7827
-INFO:test.log:read test2 : efghij
-INFO:test.log:sending sensor values
-ERROR:test.log:error while sending  test1 : 7827
-ERROR:test.log:error while sending  test2 : efghij
+INFO:test.log:read temperature
+INFO:test.log:read humidity
+INFO:test.log:read brightness
+INFO:test.log:read camera
+INFO:test.log:sent temperature
+INFO:test.log:sent humidity
+INFO:test.log:sent brightness
+INFO:test.log:sent camera
 INFO:test.log:checking control messages from dashboard

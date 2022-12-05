@@ -108,23 +108,22 @@ class ApplicationEntity:
         retval = {}
         for name, s in self.sensors.items():
             retval[name] = s.readSensor(**kwargs)
-            logInfo(f"read {name} : {retval[name]}")
+            logInfo(f"read {name}")
         
         return retval
 
     
-    @logCall("sending sensor values")
     def sendSensorValues(self, cseInterface, sensorValues):
         """
         센서값 cse로 보내는 함수 
         """
 
         for name, val in (sensorValues | self.control).items():
-            res = cseInterface.createCIN(path=f"{self.aeName}/{name}", con=val)
+            res = cseInterface.createCIN(path=f"/{self.aeName}/{name}", con=val)
             if res is None:
-                logError(f"error while sending  {name} : {val}")
+                logError(f"error while sending  {name}")
             else:
-                logInfo(f"sent {name} : {val}")
+                logInfo(f"sent {name}")
 
                 
     @logCall("checking AE on server")
@@ -174,7 +173,7 @@ class ApplicationEntity:
                 res = res["m2m:cin"]["con"]
 
                 if self.control[name] != res:
-                    logInfo(f"received control from dashboard {name} : {res}")
+                    logInfo(f"received control from dashboard {name} : {res: <10}")
                     self.control[name] = res
                 
             except KeyError:

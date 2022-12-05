@@ -176,7 +176,7 @@ class CSEInterface:
         }
 
         try:
-            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=json.dumps(body))
+            res = req.post(url=f"{self.baseurl}{path}", headers=self.headers, json=body)
             return res.json()
             
         except RequestException:
