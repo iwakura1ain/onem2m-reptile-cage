@@ -108,23 +108,22 @@ class ApplicationEntity:
         retval = {}
         for name, s in self.sensors.items():
             retval[name] = s.readSensor(**kwargs)
-            logInfo(f"read {name} : {retval[name]}")
+            logInfo(f"read {name}")
         
         return retval
 
     
-    @logCall("sending sensor values")
     def sendSensorValues(self, cseInterface, sensorValues):
         """
         센서값 cse로 보내는 함수 
         """
 
         for name, val in (sensorValues | self.control).items():
-            res = cseInterface.createCIN(path=f"{self.aeName}/{name}", con=val)
+            res = cseInterface.createCIN(path=f"/{self.aeName}/{name}", con=val)
             if res is None:
-                logError(f"error while sending  {name} : {val}")
+                logError(f"error while sending  {name}")
             else:
-                logInfo(f"sent {name} : {val}")
+                logInfo(f"sent {name}")
 
                 
     @logCall("checking AE on server")
@@ -147,34 +146,24 @@ class ApplicationEntity:
                 raise ConnectionError #TODO: error recovery when no connection
             
 
-    @logCall("checking group on server")
-    def checkGroup(self, cseInterface):
+    
+    def checkGroup(self, cseInterface): #TODO: error recovery
         """
         group 내에 존재하는지 확인 존재 확인 
         """
-        while True:
-            try:
-                # group 조회 
-                res = cseInterface.getGRP(rn=self.groupName)
-                res = res["m2m:grp"]["mid"]
 
-                # group에 ae 추가하기 
-                aePath = f"Mobius/{self.aeName}"  #TODO: static baseurl
-                if aePath not in res: 
-                    res.append(aePath) # mid = res
-                    res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
-                    res = res["m2m:grp"]["mid"]
+        res = cseInterface.getGRP(rn=self.groupName)
+        if "m2m:grp" in res.keys(): # group exists
+            res = res["m2m:grp"]["mid"]
+            res.append(f"Mobius/{self.aeName}")
+            res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
+        else:
+            res = cseInterface.createGRP(rn=self.groupName, mid=self.aeName)
+            res = res["m2m:grp"]["mid"]
+
+        print(res)
                 
-                return res
-
-            # no group
-            except KeyError:
-                cseInterface.createGRP(rn=self.groupName) #create group 
-
-            # no connection
-            except:
-                raise ConnectionError #TODO: error recovery when no connection
-            
+                            
             
     @logCall("checking control messages from dashboard")
     def checkControl(self, cseInterface):
@@ -184,7 +173,7 @@ class ApplicationEntity:
                 res = res["m2m:cin"]["con"]
 
                 if self.control[name] != res:
-                    logInfo(f"received control from dashboard {name} : {res}")
+                    logInfo(f"received control from dashboard {name} : {res: <10}")
                     self.control[name] = res
                 
             except KeyError:
