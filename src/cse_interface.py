@@ -223,13 +223,21 @@ class CSEInterface:
         except RequestException:
             pass
 
+    def delGRP(self, rn):
+        try:
+            res = req.delete(url=f"{self.baseurl}/{rn}", headers=self.adminHeaders)
+            return res.json()
+            
+        except RequestException:
+            return None
 
-    def createGRP(self, rn, mid=""):
+
+    def createGRP(self, rn, mid):
         body = {
 	    "m2m:grp": {
 		"rn": rn,
-		"mnm": 5,
-		"mid": [f"Mobius/{mid}"]
+		"mnm": 100,
+		"mid": mid
 	    }
         }
 
@@ -251,7 +259,8 @@ class CSEInterface:
     def modifyGRP(self, rn, path="/", mid=[]):
         body = {
             "m2m:grp": {
-                "mid": mid
+                "mid": mid,
+                "mnm": 100
             }
         }
         

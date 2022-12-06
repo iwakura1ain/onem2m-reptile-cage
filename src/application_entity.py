@@ -16,7 +16,7 @@ def startAE(config): #TODO: error messages
 
     #create uuid 
     try:
-        if config["AE"]["uuid"] == "":
+        if config["AE"]["uuid"] != "":
             with open("config.ini", "w+") as configfile:
                 uuid = str(UUID.uuid4())
                 config.set("AE", "uuid", uuid)
@@ -156,19 +156,33 @@ class ApplicationEntity:
         """
 
         res = cseInterface.getGRP(rn=self.groupName)
+        addList = []
         if "m2m:grp" in res.keys(): # group exists
             if "mid" in res["m2m:grp"].keys():
-                res = res["m2m:grp"]["mid"]
-            else:
-                res = []
+                addList = res["m2m:grp"]["mid"]
                 
-            res.append(f"Mobius/{self.aeName}")
-            res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
+            else:
+                addList = []
+
+            print(f"old group: {addList}")
+
+            res2 = cseInterface.delGRP(rn=self.groupName)
+                
+                
+            addList.append(f"Mobius/{self.aeName}")
+            print(f"new group: {addList}")
+            #res = cseInterface.modifyGRP(rn=self.groupName, mid=addList)
+            res = cseInterface.createGRP(rn=self.groupName, mid=addList)
+            
+            print("\n\n group add request: \n", addList, "\n group add returned: \n", res, "\n\n")
+
         else:
-            res = cseInterface.createGRP(rn=self.groupName, mid=self.aeName)
+            res = cseInterface.createGRP(rn=self.groupName, mid=[f"Mobius/{self.aeName}"])
             if "mid" not in res["m2m:grp"].keys():
                 res = [f"Mobius/{self.aeName}"]
                 res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
+                res2 = cseInterface.delGRP(rn=self.groupName)
+                res3 = cseInterface.createGRP(rn=self.groupName, mid=res)
                 
 
         print(res) 
