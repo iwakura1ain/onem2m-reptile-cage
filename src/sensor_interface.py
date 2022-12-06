@@ -58,23 +58,25 @@ class SensorInterface:
     
     @staticmethod
     def cameraSensor():
-        # try:
-        #     if picam2 is None:
-        #         picam2 = Picamera2()
-        #         picam2.start()
+        try:
+            if picam2 is None:
+                picam2 = Picamera2()
+                picam2.start()
         
-        #     image =  picam2.capture_image(main={"size": (1024, 768)})
+            image =  picam2.capture_image(main={"size": (640,350)})
+            img_resize = image.resize((180,120))
 
-        #     buff = BytesIO()
-        #     image.save(buff, format="JPEG")
-        #     return base64.b64encode(buff.getvalue())
-            
-        
-        image = Image.open("test.jpeg")
+            buff = BytesIO()
+            img_resize.save(buff, format="JPEG")
+            return base64.b64encode(buff.getvalue())
 
-        buff = BytesIO()
-        image.save(buff, format="JPEG")
-        return str(base64.b64encode(buff.getvalue()), "utf-8")
+        except:
+            image = Image.open("placeholder.jpeg")
+            img_resize = image.resize((180,120))
+
+            buff = BytesIO()
+            img_resize.save(buff, format="JPEG")
+            return str(base64.b64encode(buff.getvalue()), "utf-8")
 
             
 

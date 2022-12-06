@@ -47,11 +47,13 @@ def startAE(config): #TODO: error messages
         
     #check if data structures exist on server -> if not create them 
     try:
-        _ = applicationEntity.checkAE(cseInterface)
-        logInfo("AE verified")
+        t = applicationEntity.checkAE(cseInterface)
+        print(t)
+        print("\nAE verified")
         
-        _ = applicationEntity.checkGroup(cseInterface)
-        logInfo("group verified")
+        t = applicationEntity.checkGroup(cseInterface)
+        print(t)
+        print("\ngroup verified")
 
     except ConnectionError:
         logError("error no connection")
@@ -120,6 +122,7 @@ class ApplicationEntity:
 
         for name, val in (sensorValues | self.control).items():
             res = cseInterface.createCIN(path=f"/{self.aeName}/{name}", con=val)
+            print(f"\n\n{name} read value\n", res)
             if res is None:
                 logError(f"error while sending  {name}")
             else:
@@ -154,14 +157,22 @@ class ApplicationEntity:
 
         res = cseInterface.getGRP(rn=self.groupName)
         if "m2m:grp" in res.keys(): # group exists
-            res = res["m2m:grp"]["mid"]
+            if "mid" in res["m2m:grp"].keys():
+                res = res["m2m:grp"]["mid"]
+            else:
+                res = []
+                
             res.append(f"Mobius/{self.aeName}")
             res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
         else:
             res = cseInterface.createGRP(rn=self.groupName, mid=self.aeName)
-            res = res["m2m:grp"]["mid"]
+            if "mid" not in res["m2m:grp"].keys():
+                res = [f"Mobius/{self.aeName}"]
+                res = cseInterface.modifyGRP(rn=self.groupName, mid=res)
+                
 
-        print(res)
+        print(res) 
+        return res
                 
                             
             
