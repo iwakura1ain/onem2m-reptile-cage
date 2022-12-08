@@ -7,7 +7,7 @@ import uuid as UUID
 import json 
 
 
-def startAE(config): #TODO: error messages 
+def startAE(config, groupname): #TODO: error messages 
     """
     AE 생성, CSEInterface 생성 -> main AE loop
     ---
@@ -20,6 +20,7 @@ def startAE(config): #TODO: error messages
             with open("config.ini", "w+") as configfile:
                 uuid = str(UUID.uuid4())
                 config.set("AE", "uuid", uuid)
+                config.set("AE", "group_name", groupname)
                 config.write(configfile)
                 
                 logInfo(f"new UUID: {uuid}")
@@ -61,10 +62,14 @@ def startAE(config): #TODO: error messages
 
         
     #main loop
-    while not sleep(int(applicationEntity.interval)):
+    for i in range(3):
         sensorValues = applicationEntity.getSensorValues()       
         applicationEntity.sendSensorValues(cseInterface, sensorValues)
         applicationEntity.checkControl(cseInterface)
+
+        sleep(1)
+
+    return
 
 
 class ApplicationEntity:
